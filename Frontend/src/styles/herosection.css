@@ -1,0 +1,29 @@
+#l1{
+    width: 1000px;
+    height: 650px;
+    margin: 20px 20px;
+    border-radius: 25%;
+
+}
+.landpage{
+    display: flex;
+   
+    
+}
+
+#p1{
+  font-size:xx-large;
+  /* text-align: center; */
+margin-top: 200px;
+margin-bottom: 10px;
+ font-weight: bolder;
+ word-spacing: 2px;
+
+}
+#p2{
+    font-size:xx-large;
+  text-align: center;
+
+ font-weight: bolder;
+ word-spacing: 2px;
+}

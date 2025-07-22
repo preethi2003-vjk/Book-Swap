@@ -1,0 +1,27 @@
+.card-body p{
+    font-size:xx-large;
+   text-align: justify;
+
+    word-spacing: 2px;
+     font-family:'Times New Roman', Times, serif;
+    font-weight:lighter;
+ 
+    line-height: 50px;
+}
+.card{
+    height: 100%;
+    width: 1100px;
+     margin: 0px 300px;
+     
+}
+.card-body h3{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    font-size: xx-large;
+}
+.about-container{
+      background-image: url("https://media.istockphoto.com/id/470721440/vector/books-seamless-pattern.jpg?s=612x612&w=0&k=20&c=SBWwuWALkou5kDTDq6_V7SGuBMJ4vxTK3y15B9ZSFDE=");
+ margin-top: 0px;
+
+ 
+    }

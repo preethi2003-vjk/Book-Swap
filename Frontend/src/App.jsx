@@ -6,6 +6,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import { Routes,Route } from 'react-router-dom'
 import Landingpage from './pages/landing page' 
+import About from './pages/about'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -13,6 +14,7 @@ function App() {
    <>
    <Routes>
     <Route path="/" element={<Landingpage/>}/>
+       <Route path="/about" element={<About/>}/>
    </Routes>
    </>
       

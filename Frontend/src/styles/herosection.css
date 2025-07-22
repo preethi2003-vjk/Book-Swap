@@ -10,20 +10,20 @@
    
     
 }
-
-#p1{
-  font-size:xx-large;
-  /* text-align: center; */
-margin-top: 200px;
-margin-bottom: 10px;
- font-weight: bolder;
- word-spacing: 2px;
-
+.subland{
+    text-align: center;
 }
-#p2{
-    font-size:xx-large;
+.subland p{
+  font-size:xx-large;
   text-align: center;
+  
+  margin-top: 200px;
+  margin-left: 20px;
+  font-weight: bolder;
 
- font-weight: bolder;
- word-spacing: 2px;
+  word-spacing: 2px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+#landbtn{
+    margin-top: 20px;
 }

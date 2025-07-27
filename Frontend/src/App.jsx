@@ -11,6 +11,7 @@ import Contact from './pages/contact'
 import Loginadmin from './pages/loginadmin'
 import Userlogin from './pages/userlogin'
 import Librarylogin from './pages/librarylogin'
+import Userregisterpage from './pages/user-register'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -23,6 +24,7 @@ function App() {
          <Route path="/admin-login" element={<Loginadmin/>}/>
           <Route path="/user-login" element={<Userlogin/>}/>
            <Route path="/library-login" element={<Librarylogin/>}/>
+             <Route path="/user-register" element={<Userregisterpage/>}/>
    </Routes>
 
    </>

@@ -1,7 +1,8 @@
 .user-regform{
     position: absolute;
     left: 75%;
-    top:100%;
+    top:119%;
+    bottom:auto;
     transform: translate(-50%,-50%);
     width: 700px;
     display: flex;
@@ -68,9 +69,9 @@ font-weight: bold;
 #userimg{
   width: 850px;
    position: absolute;
-   top: 20%;
+   top: 18%;
    left: 2%;
-   height: 150vh;
+   height: 160vh;
    border-radius: 10%;
    
 }

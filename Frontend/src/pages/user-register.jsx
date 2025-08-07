@@ -2,7 +2,9 @@ import "../styles/userregister.css"
 import Countries from "../components/countries"
 import { Link } from "react-router-dom"
 import { useState } from "react"
+
 function Userregisterpage() {
+    const countries=Countries();
     const[data,setdata]=useState({firstname:"",lastname:"",gender:"",dob:"",email:"",mbno:"",hname:"",vc:"",dist:"",state:"",ctry:"",pcode:"",password:"",cpassword:""})
         const[error,seterror]=useState({firstname:"",lastname:"",gender:"",dob:"",email:"",mbno:"",hname:"",vc:"",dist:"",state:"",ctry:"",pcode:"",password:"",cpassword:""})
     function change(e){
@@ -22,6 +24,67 @@ function Userregisterpage() {
         if(data.firstname=="")
         {
             error.firstname="filed required"
+        }
+        if(data.lastname==""){
+            error.lastname="field required"
+        }
+        if(data.gender==""){
+            error.gender="field required"
+        }
+        if(data.dob==""){
+            error.dob="field required"
+        }
+        if(data.email==""){
+            error.email="field required"
+        }
+        else {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(data.email)) {
+    error.email = "invalid email format";
+  }
+}
+        if(data.mbno==""){
+            error.mbno="field required"
+        }
+        else if(data.mbno.length>10||data.mbno.length<10){
+            error.mbno="Mobile number should contain 10 digits"
+        }
+        
+        if(data.hname=="")
+        {
+            error.hname="field required"
+        }
+        if(data.vc=="")
+        {
+            error.vc="field required"
+        }
+        if(data.dist=="")
+        {
+            error.dist="field required"
+        }
+        if(data.state=="")
+        {
+            error.state="field required"
+        }
+        if(data.ctry == ""){
+  error.ctry = "field required";
+}
+    
+        if(data.pcode=="")
+        {
+            error.state="field required"
+        }
+        else if(data.pcode.length>6||data.pcode.length<6){
+            error.pcode="pincode should contain 6 digits"
+        }
+        if(data.password==""){
+            error.password="filed required"
+        }
+        if(data.cpassword==""){
+            error.cpassword="field required"
+        }
+        else if(data.cpassword!=data.password){
+            error.cpassword="Doesn't  match with the password"
         }
         return error
     }
@@ -44,6 +107,7 @@ function Userregisterpage() {
                 <div className="form-group">
                     <label htmlFor="last-name">Lastname</label>
                     <input onChange={change} type="text" id="last-name" name="lastname" />
+                     <p className="text-danger">{error.lastname}</p>
                 </div>
             </div>
             <label htmlFor="gen">Gender</label>
@@ -54,29 +118,49 @@ function Userregisterpage() {
                 <label htmlFor="female">Female</label>
                 <input onChange={change} type="radio" id="gen"  name="gender" value="others" />
                 <label htmlFor="others">Others</label>
+                 <p className="text-danger">{error.gender}</p>
             </div>
             <label htmlFor="birth">Date of Birth</label>
             <input  onChange={change}type="date" id="birth" name="dob" />
+             <p className="text-danger">{error.dob}</p>
             <label htmlFor="mail">Email</label>
             <input onChange={change} type="email" id="mail" name="email" />
+             <p className="text-danger">{error.email}</p>
             <label htmlFor="mno">Mobile No:</label>
             <input onChange={change} type="number" id="mno" name="mbno" />
+             <p className="text-danger">{error.mbno}</p>
             <label htmlFor="hname">Housename</label>
             <input onChange={change} type="text" id="hname" name="hname" />
+             <p className="text-danger">{error.hname}</p>
             <label htmlFor="vc">Village/City</label>
             <input onChange={change} type="text" id="vc" name="vc" />
+             <p className="text-danger">{error.vc}</p>
             <label htmlFor="dist">District</label>
             <input onChange={change} type="text" id="dist" name="dist" />
+             <p className="text-danger">{error.dist}</p>
             <label htmlFor="state">State</label>
             <input onChange={change} type="text" id="state" name="state" />
+             <p className="text-danger">{error.state}</p>
             <label htmlFor="pcode">Pincode</label>
             <input onChange={change} type="number" id="pcode" name="pcode" />
+             <p className="text-danger">{error.pcode}</p>
             <label htmlFor="ctry">Country</label>
-            <Countries />
+            <select id="ctry" name="ctry" onChange={change}>
+  <option value="">-- Select Country --</option>
+  {countries.map((country) => (
+    <option key={country} value={country}>{country}</option>
+  ))}
+</select>
+<p className="text-danger">{error.ctry}</p>
+
+           
+            
             <label htmlFor="password">Password</label>
             <input onChange={change} type="password" id="password" name="password" />
+             <p className="text-danger">{error.password}</p>
             <label htmlFor="cpassword">Confirm Password</label>
             <input onChange={change} type="password" id="cpassword" name="cpassword" />
+             <p className="text-danger">{error.cpassword}</p>
             <button className="btn btn-primary" onClick={show}>Sign Up</button>
             <h5>Already have an account? <Link to="/user-login">Login</Link></h5>
             

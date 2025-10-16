@@ -12,8 +12,9 @@ import Loginadmin from './pages/loginadmin'
 import Userlogin from './pages/userlogin'
 import Librarylogin from './pages/librarylogin'
 import Userregisterpage from './pages/user-register'
+import Libraryregistrationpage from './pages/libreg'
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return (
    <>
@@ -25,6 +26,8 @@ function App() {
           <Route path="/user-login" element={<Userlogin/>}/>
            <Route path="/library-login" element={<Librarylogin/>}/>
              <Route path="/user-register" element={<Userregisterpage/>}/>
+              <Route path="/library-register" element={<Libraryregistrationpage/>}/>
+
    </Routes>
 
    </>

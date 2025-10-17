@@ -13,6 +13,8 @@ import Userlogin from './pages/userlogin'
 import Librarylogin from './pages/librarylogin'
 import Userregisterpage from './pages/user-register'
 import Libraryregistrationpage from './pages/libreg'
+import Admindash from './pages/admindash'
+import UserHomepage from './pages/userhomepage'
 function App() {
   
 
@@ -27,6 +29,9 @@ function App() {
            <Route path="/library-login" element={<Librarylogin/>}/>
              <Route path="/user-register" element={<Userregisterpage/>}/>
               <Route path="/library-register" element={<Libraryregistrationpage/>}/>
+              <Route path="/admin-dash" element={<Admindash/>}/>
+              <Route path="/user-dash" element={<UserHomepage/>}/>
+
 
    </Routes>
 

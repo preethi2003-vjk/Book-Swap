@@ -1,0 +1,56 @@
+.admin-home-container {
+  padding: 40px;
+  background-color: #f9fafb;
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.admin-dashboard-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #1f2937;
+  margin-bottom: 40px;
+}
+
+.admin-cards-container {
+ display: flex;
+ justify-content: center;
+ align-items: flex-start;
+ gap: 25px;
+ 
+ 
+}
+
+.admin-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 25px;
+  width: 300px;
+  height: 400px;
+ 
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.admin-card:hover {
+
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.admin-card h3 {
+  font-size: 1.2rem;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.admin-card p {
+  font-size: 0.95rem;
+  color: #4b5563;
+}

@@ -1,0 +1,42 @@
+.navitem{
+    display: flex;
+    gap: 35px;
+    list-style: none;
+    align-items: center;
+    
+   
+}
+.usernav-container{
+    background-color: chocolate;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: flex-end;
+    
+}
+.navitem li{
+    font-size: large;
+    font-weight: bold;
+    color: rgb(1, 20, 28);
+    cursor: pointer;
+}
+.navitem li:hover{
+    color:antiquewhite ;
+}
+.navitem li svg{
+    width: 30px;
+    height: 30px;
+}
+.navitem li button{
+    border-radius: 50%;
+    border-style: none;
+  
+}
+.navbar-heading{
+    font-size: xx-large;
+    font-weight: bolder;
+    color: rgb(105, 19, 19);
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}

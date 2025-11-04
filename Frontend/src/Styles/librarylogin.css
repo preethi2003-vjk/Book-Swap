@@ -1,0 +1,63 @@
+.lib-form{
+    justify-content: center;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   height: 100vh;
+    background-image: url(https://png.pngtree.com/thumb_back/fw800/background/20251025/pngtree-library-with-books-and-autumn-tree-view-image_20004433.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.lib-form h2{
+     font-size: xx-large;
+    font-weight: bolder;
+    color: azure;
+}
+.lib-login-form{
+    display: flex;
+   flex-direction: column;
+   width: 400px;
+   padding: 30px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+     border-radius: 8px;
+     border: 1px solid #ccc;
+     background-color: transparent
+}
+.lib-login-form label{
+     font-size: x-large;
+    font-weight: bold;
+    margin-bottom: 8px;
+    padding: 5px;
+    color: aliceblue;
+}
+.lib-login-form input{
+      margin-bottom: 5px;
+    padding: 10px;
+    border-radius: 2px;
+     color: aliceblue;
+     border: 2px solid #aaa;
+     border-radius: 4px;
+     font-size: larger;
+     background-color: transparent;
+}
+.lib-login-form p{
+    color: red;
+}
+.lib-login-form button{
+     padding: 10px 20px;
+   margin-top: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: fit-content;
+ font-size: large;
+ align-self: center;
+}
+.lib-login-form input::placeholder{
+    color:rgb(248, 252, 252);
+}
+.lib-login-form button:hover{
+     background-color: #3f3cf3;
+}

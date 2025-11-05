@@ -59,3 +59,9 @@
     font-size: large;
     font-weight: bold;
 }
+.user-login-form h3{
+    color: rgb(212, 208, 204);
+}
+.user-login-form a{
+    color:rgb(53, 194, 233);
+}

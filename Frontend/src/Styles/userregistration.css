@@ -57,3 +57,11 @@
 .user-reg-form button:hover{
     background-color: #3f3cf3;
 }
+.user-reg-form select{
+     font-size: large;
+    
+    margin-bottom: 8px;
+    padding: 5px;
+    
+    background-color: transparent;
+}

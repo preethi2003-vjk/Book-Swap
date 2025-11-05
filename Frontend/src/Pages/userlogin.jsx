@@ -1,6 +1,7 @@
 import "../Styles/userlogin.css"
 import { useState } from "react"
 import axios,{AxiosError} from "axios"
+import { Link } from "react-router"
 function Userlogin(){
     const[data,setdata]=useState({email:"",password:""})
     const[error,seterror]=useState({})
@@ -50,7 +51,9 @@ function Userlogin(){
             <input type="password" name="password" onChange={change} /> 
             <p>{error.password}</p>
              <button type="submit" onClick={login}>Login</button>
+             <h3>Don't have an account?? <Link to="/user-register">Click here!!</Link></h3>
         </form>
+
     </div>
     </>
     )

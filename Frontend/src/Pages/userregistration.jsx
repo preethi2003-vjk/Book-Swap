@@ -2,9 +2,10 @@ import { useState } from "react"
 import axios from "axios"
 import { useNavigate } from "react-router"
 import "../Styles/userregistration.css"
+import countryList from "../utils/countries"
 function Userregister(){
     const navigate=useNavigate()
-    const[data,setdata]=useState({fullName:"",email:"",phoneNumber:"",addressLine1:"",addressLine2:"",District:"",State:"",pinCode:"",password:"",cpassword:""})
+    const[data,setdata]=useState({fullName:"",email:"",phoneNumber:"",addressLine1:"",addressLine2:"",District:"",State:"",pinCode:"",Country:"",password:"",cpassword:""})
     const[file,setfile]=useState()
     function change(e){
         e.preventDefault()
@@ -43,6 +44,14 @@ function Userregister(){
                 <input type="text" placeholder="Enter your state" onChange={change}/>
                 <label htmlFor="pinCode">PinCode:</label>
                 <input type="text" placeholder="Enter the 6digit pincode" onChange={change}/>
+                <label htmlFor="countries">Country</label>
+                <select name="Country" value={data.Country} id="country" onChange={change}>
+                    {
+                        countryList.map((country)=>{
+                            return <option value={country}>{country}</option>
+                        })
+                    }
+                </select>
                 <label htmlFor="password">Password:</label>
                 <input type="password" placeholder="Enter the password" onChange={change}/>
                 <label htmlFor="cpassword">Confirm Password:</label>

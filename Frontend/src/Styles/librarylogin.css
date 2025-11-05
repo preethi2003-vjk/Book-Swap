@@ -61,3 +61,9 @@
 .lib-login-form button:hover{
      background-color: #3f3cf3;
 }
+.lib-login-form h3{
+     color: rgb(212, 208, 204);
+}
+.lib-login-form a{
+    color:rgb(53, 194, 233);
+}

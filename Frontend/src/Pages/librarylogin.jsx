@@ -2,6 +2,7 @@ import { useState } from "react"
 import axios from "axios"
 import "../Styles/librarylogin.css"
 import { AxiosError } from "axios"
+import { Link } from "react-router"
 function Librarylogin(){
      const[data,setdata]=useState({email:"",password:""})
      const[error,seterror]=useState({})
@@ -51,6 +52,7 @@ function Librarylogin(){
             <input type="password" name="password" placeholder="Enter your password" onChange={change}/>
             <p>{error.password}</p>
             <button type="submit" onClick={login}>Login</button>
+             <h3>Don't have an account?? <Link to="/user-register">Click here!!</Link></h3>
         </form>
       </div>
      

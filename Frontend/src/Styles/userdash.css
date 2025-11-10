@@ -1,0 +1,20 @@
+.userdash-contnet{
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 85vh;
+    background-color: #96c5f3;
+    color: #333;
+   
+}
+.userdash-contnet h1{
+    font-size: xx-large;
+    font-weight: bolder;
+   
+}
+.userdash-contnet h3{
+    font-size: larger;
+    font-weight: bold;
+}
+

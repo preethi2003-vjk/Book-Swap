@@ -8,8 +8,7 @@ const BookSchema=mongoose.Schema({
     ISBN:{type:String,required:true},
     language:{type:String,required:true},
     description:{type:String,required:true},
-    condition:{type:String,required:true},
-    coverImage:{type:String,required:true}
+    coverImage:{type:String}
 
 
 })

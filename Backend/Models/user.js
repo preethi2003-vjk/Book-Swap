@@ -12,7 +12,7 @@ const userSchema=mongoose.Schema(
         Country:{type:String,required:true},
         password:{type:String,required:true},
        
-        profilePicture:{type:String}
+        img:{type:String}
  }
 
 )

@@ -1,10 +1,12 @@
-import "../Styles/userlogin.css"
+import "../../Styles/userlogin.css"
 import { useState } from "react"
 import axios,{AxiosError} from "axios"
 import { Link } from "react-router"
+import { useNavigate } from "react-router"
 function Userlogin(){
     const[data,setdata]=useState({email:"",password:""})
     const[error,seterror]=useState({})
+    const navigate=useNavigate()
     function change(e){
         e.preventDefault()
         setdata({...data,[e.target.name]:e.target.value})
@@ -25,6 +27,7 @@ function Userlogin(){
             const token=response.data.token 
             localStorage.setItem("Token",token)
             alert("Login Successfully")
+            navigate("/user-dash")
            }
          }
 

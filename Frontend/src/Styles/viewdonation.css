@@ -1,0 +1,28 @@
+
+.mybook-card img{
+     width: 200px;
+    height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+.mybook-card{
+    
+    border: 2px solid black;
+    background-color: #fff;
+    border-radius: 8px;
+    
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    padding:15px;
+    width: fit-content;
+    transition: transform 0.2s;
+
+}
+.my-books{
+    display:flex;
+    gap: 10px;
+}
+.others-books{
+     display:flex;
+    gap: 10px;
+}

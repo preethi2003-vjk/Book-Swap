@@ -1,19 +1,39 @@
 import "../../Styles/viewdonation.css"
 import { useState,useEffect } from "react"
 import instance from "../../utils/apiclient"
-import { useParams } from "react-router"
+
 function ViewDonation() {
-    const[mydonations,setmydonations]=useState({})
-    const { id } = useParams()
-    
-    // const[otherdonations,setotherDonations]=useState()
+    const[mydonations,setmydonations]=useState([])
+    const[otherdonations,setotherDonations]=useState([])
     async function fetchDonations(){
-        console.log(id)
-        const response=await instance.get("/book/view/"+id)
-        setmydonations(response.data.books)
+        
+        const response=await instance.get("/book/view")
+        setmydonations(response.data)
+
+    }
+    async function fetchallDonations(){
+        const response=await instance.get("/book/viewall")
+        setotherDonations(response.data)
+    }
+    async function sendRequest(bookId){
+            try{
+                const response=await instance.post("/request/send",{bookId})
+                alert("request send ")
+                
+                let index=otherdonations.findIndex((book)=>{
+                    return book._id==bookId
+                })
+                
+                otherdonations[index].disabled=true
+                setotherDonations([...otherdonations])
+            }
+            catch{
+                alert("failed")
+            }
     }
     useEffect(()=>{
         fetchDonations()
+        fetchallDonations()
     },[])
     return (
         <>
@@ -21,27 +41,39 @@ function ViewDonation() {
                 <h1>VIEW DONATIONS</h1>
                 <h2>📚My Donations</h2>
                 <div className="my-books">
+                   {mydonations.map((item)=>{
+                    return(
+                        <div className="mybook-card">
 
-                    <div className="mybook-card">
-                        <img src={`http://localhost:8080/uploads/${mydonations.coverImage}`}
+                        <img src={"http://localhost:8080/uploads/"+item.coverImage}
                        
                         />
-                        <h3>{mydonations?.title}</h3>
-                        <p>{mydonations?.author}</p>
-                        <p>date of donation</p>
+                        <h3>{item.title}</h3>
+                        <p>{item.author}</p>
+                        <p>{new Date(item.Date).toLocaleDateString()}</p>
                     </div>
+                    )
+                   })} 
+                    
                     
                 </div>
                 <h2>🤝Book Donated By Others</h2>
                 <div className="others-books">
-
-
-                    <div className="mybook-card">
-                        <img src="https://res.cloudinary.com/jerrick/image/upload/d_642250b563292b35f27461a7.png,f_jpg,fl_progressive,q_auto,w_1024/63e004cebb978e001e37d1e6.jpg" alt="" />
-                        <h3>Book Name</h3>
-                        <p>Author</p>
+                   {otherdonations.map((item)=>{
+                        return(
+                             <div className="mybook-card">
+                        <img src={"http://localhost:8080/uploads/"+item.coverImage}/>
+                        <h3>{item.title}</h3>
+                        <p>{item.author}</p>
                         <p>date of donation</p>
+                        <button onClick={()=>{
+                            sendRequest(item._id)
+                        }} disabled={item.disabled}>Request</button>
                     </div>
+                        )
+                   })}
+
+                   
 
                 </div>
             </div>

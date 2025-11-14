@@ -18,7 +18,8 @@ router.post("/add",upload.single("cover_Image"),async(req,res)=>{
             ISBN,
             language,
             description,
-            coverImage:req.file&&req.file?.filename
+            coverImage:req.file&&req.file?.filename,
+            Date: new Date()
         })
         await book.save()
         await book.populate("UserID")
@@ -33,19 +34,32 @@ router.post("/add",upload.single("cover_Image"),async(req,res)=>{
     }
     
 })
-router.get("/view/:id",async(req,res)=>{
+router.get("/view",async(req,res)=>{
     const token=req.headers.authorization.slice(7)
     const decoded=jwt.verify(token,process.env.JWT_TOKEN)
-    if(decoded.id!==req.params.id){
-        res.status(403).send({ message: "Unauthorized access" })
-    }
+    
    
-    const books=await Book.findOne({UserID:decoded.id})
+   
+    const books=await Book.find({UserID:decoded.id})
     if(!books){
         res.status(404).send({message:"No books found"})
         
     }
     else{
+        res.send(books)
+    }
+})
+router.get("/viewall",async(req,res)=>{
+    const token=req.headers.authorization.slice(7)
+    const decoded=jwt.verify(token,process.env.JWT_TOKEN)
+    
+    const books=await Book.find({UserID:{$ne:decoded.id}})
+    if(!books){
+        res.status(404).send({message:"No books found"})
+        
+    }
+    else{
+        
         res.send(books)
     }
 })

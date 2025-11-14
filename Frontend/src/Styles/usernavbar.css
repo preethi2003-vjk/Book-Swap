@@ -30,16 +30,24 @@
     color:#0077cc
     
 }
-.user-profile-logo{
+.user-profile-request{
+ 
     margin-left: auto;
-    
+  
     
 }
-.user-profile-logo a svg{
+.user-profile-request a{
+  margin-right: 30px;
+}
+.user-profile-request a svg{
     cursor: pointer;
+    
   
 }
-.user-profile-logo a:hover svg{
+
+
+
+.user-profile-request a:hover svg{
     stroke: #0077cc;
 }
 .user-logout{

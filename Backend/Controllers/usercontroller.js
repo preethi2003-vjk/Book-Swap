@@ -51,7 +51,37 @@ router.get("/profile",async(req,res)=>{
     const token=req.headers.authorization.slice(7)
     const decoded=jwt.verify(token,process.env.JWT_TOKEN)
     const user=await User.findOne({"_id":decoded.id})
-    console.log(decoded)
+    
     res.send({message:"User Profile",user})
+})
+router.put("/updateprofile",upload.single("Profile_pic"),async(req,res)=>{
+    try{
+
+   
+     const token=req.headers.authorization.slice(7)
+    const decoded=jwt.verify(token,process.env.JWT_TOKEN)
+    
+    const {fullName,email,phoneNumber,addressLine1,addressLine2,District,State,pinCode,Country}=req.body
+   
+      await User.findByIdAndUpdate(decoded.id,{
+        fullName,
+        email,
+        phoneNumber,
+        addressLine1,
+        addressLine2,
+        District,
+        State,
+        pinCode,
+        Country,
+        
+        img:req.file && req.file?.filename
+    })
+   
+    res.send({message:"Updated"})
+     }
+     catch(e){
+        console.error(e)
+        res.status(403).send({ message: "not authorised" })
+     }
 })
 module.exports=router

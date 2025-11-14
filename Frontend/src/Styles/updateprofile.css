@@ -1,24 +1,10 @@
-.user-reg{
-    display: flex;
+.update-profile{
+       display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url(https://w0.peakpx.com/wallpaper/327/582/HD-wallpaper-night-study-book-glasses-lamp-light.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-   
 }
-.user-home-link {
-  align-self: flex-end;
-  margin: 15px 30px 0 0;
-}
-
-
-
-
-
-
-.user-reg-form{
+.updateprofile-form{
     display: flex;
     flex-direction: column;
     width: 400px;
@@ -27,20 +13,14 @@
      border-radius: 8px;
      border: 2px solid #656464;
      background-color: transparent
-
 }
-.user-reg h2{
-       font-size: xx-large;
-    font-weight: bolder;
-   
-}
-.user-reg-form label{
-     font-size: x-large;
+.updateprofile-form label{
+      font-size: x-large;
     font-weight: bold;
     margin-bottom: 8px;
     padding: 5px;
 }
-.user-reg-form input{
+.updateprofile-form input{
      margin-bottom: 5px;
     padding: 10px;
     border-radius: 2px;
@@ -49,11 +29,8 @@
      font-size: larger;
      background-color: transparent;
 }
-.user-reg-form input::placeholder{
-    color:azure;
-}
-.user-reg-form button{
-     padding: 10px 20px;
+.updateprofile-form button{
+    padding: 10px 20px;
    margin-top: 10px;
   
   background-color: #007bff;
@@ -65,10 +42,13 @@
  font-size: large;
  align-self: center;
 }
-.user-reg-form button:hover{
+.updateprofile-form input ::placeholder{
+     color:azure;
+}
+.updateprofile-form button:hover{
     background-color: #3f3cf3;
 }
-.user-reg-form select{
+.updateprofile-form select{
      font-size: large;
     
     margin-bottom: 8px;

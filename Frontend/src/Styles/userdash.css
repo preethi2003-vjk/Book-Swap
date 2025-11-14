@@ -6,6 +6,10 @@
     height: 85vh;
     background-color: #96c5f3;
     color: #333;
+     font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  /* font-weight: <weight>;
+  font-style: normal; */
    
 }
 .userdash-contnet h1{
@@ -17,4 +21,6 @@
     font-size: larger;
     font-weight: bold;
 }
+
+
 

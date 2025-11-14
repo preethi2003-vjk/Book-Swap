@@ -26,3 +26,18 @@
      display:flex;
     gap: 10px;
 }
+.view-donation-books h1{
+    text-align: center;
+}
+.others-books button{
+    padding: 10px 20px;
+   margin-top: 10px;
+  background-color:chocolate;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: fit-content;
+ font-size: large;
+ align-self: center;
+}

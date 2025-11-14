@@ -14,6 +14,8 @@ import Landingpage from './Pages/landingpage'
 import Userdash from './Pages/User/userdash'
 import Userdonation from './Pages/User/userdonation'
 import ViewDonation from './Pages/User/viewdonations'
+import Updateprofile from './Pages/User/updateprofile'
+import ViewRequest from './Pages/User/viewrequest'
 function App() {
   
 
@@ -30,7 +32,9 @@ function App() {
          <Route path="/user-profile" element={<Userprofile/>}/> 
          <Route path="/user-dash" element={<Userdash/>}/> 
          <Route path="/user-donation" element={<Userdonation/>}/> 
-         <Route path="/viewdonation/:id" element={<ViewDonation/>}/> 
+         <Route path="/viewdonation" element={<ViewDonation/>}/> 
+         <Route path="/updateprofile" element={<Updateprofile/>}/> 
+         <Route path="/viewrequest" element={<ViewRequest/>}/> 
       </Routes>
     </>
   )

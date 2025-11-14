@@ -8,9 +8,10 @@ const BookSchema=mongoose.Schema({
     ISBN:{type:String,required:true},
     language:{type:String,required:true},
     description:{type:String,required:true},
-    coverImage:{type:String}
+    coverImage:{type:String},
+    Date:{type:Date,required:true}
 
 
-})
+},{timestamps:true})
 const Book=mongoose.model("book",BookSchema)
 module.exports=Book

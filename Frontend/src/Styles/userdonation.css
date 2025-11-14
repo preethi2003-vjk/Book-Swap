@@ -3,6 +3,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-image:url(https://media.istockphoto.com/id/1178491737/vector/cardboard-box-with-books-for-donations-charity-colorful-vector-illustration.jpg?s=612x612&w=0&k=20&c=imqCEOz8STlw-Xbsc_AZ_ufQft4iqT111fjeDPnsRWg=) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.user-dash-link {
+  align-self: flex-end;
+  margin: 15px 30px 0 0;
 }
 .user-donation-form{
      display: flex;

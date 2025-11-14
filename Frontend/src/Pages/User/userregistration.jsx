@@ -3,6 +3,7 @@ import axios from "axios"
 import { useNavigate } from "react-router"
 import "../../Styles/userregistration.css"
 import countryList from "../../utils/countries"
+import { Link } from "react-router"
 function Userregister(){
     const navigate=useNavigate()
     const[data,setdata]=useState({fullName:"",email:"",phoneNumber:"",addressLine1:"",addressLine2:"",District:"",State:"",pinCode:"",Country:"",password:"",cpassword:""})
@@ -40,8 +41,14 @@ function Userregister(){
     }
     return(
         <>
+        
         <div className="user-reg">
+            <div className="user-home-link">
+                <Link to="/"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" stroke="black" fill="none" ><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></Link>
+            </div>
+            
              <h2>User Registration Page</h2>
+            
             <form className="user-reg-form">
                
                 <label htmlFor="fullName">Full Name:</label>

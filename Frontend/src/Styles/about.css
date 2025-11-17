@@ -1,0 +1,71 @@
+/* Full Page Background */
+.about-page {
+    min-height: 100vh;
+    padding: 30px;
+    background-image: url(https://images.unsplash.com/photo-1752010069103-2dac0087b78c?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE3fHx8ZW58MHx8fHx8);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Back Button */
+.back-btn button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #454343c4;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+ 
+}
+
+.back-btn button:hover {
+    background-color: #1b1b1b;
+}
+
+/* Main Page Title */
+.about-title {
+    text-align: center;
+    font-size: 40px;
+    color: brown;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+/* Each Section (Image left + text right) */
+.about-section {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    margin: 40px 0;
+    
+    padding: 25px;
+    border-radius: 12px;
+ 
+}
+
+/* Section Images */
+.about-section img {
+    width: 480px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Section Text */
+.about-text h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #a12f2f;
+}
+
+.about-text p {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #2d2020;
+    max-width: 600px;
+}
+
+

@@ -1,8 +1,8 @@
 import { useState } from "react"
 import { useNavigate } from "react-router"
 import  { AxiosError } from "axios"
-import instance from "../utils/apiclient"
-import "../Styles/adminlogin.css"
+import instance from "../../utils/apiclient"
+import "../../Styles/adminlogin.css"
 function Adminlogin(){
      const[data,setdata]=useState({username:"",password:""})
      const[error,seterror]=useState({})

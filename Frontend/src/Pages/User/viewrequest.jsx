@@ -6,15 +6,34 @@ import "../../Styles/viewrequest.css"
 
 function ViewRequest() {
     const [reqdetailes, setreqdetailes] = useState([])
-    const[detailes,setdetailes]=useState([])
+    const [detailes, setdetailes] = useState([])
     async function getreqDetailes() {
         const response = await instance.get("/request/view")
         setreqdetailes(response.data)
     }
-    async function reqDetailes(){
-        const response=await instance.get("/request/receive")
+    async function reqDetailes() {
+        const response = await instance.get("/request/receive")
+       
         setdetailes(response.data)
     }
+    async function handleApprove(id) {
+        try {
+            await instance.post("/request/accept", { requestId: id });
+            reqDetailes();  
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
+    async function handleReject(id) {
+        try {
+            await instance.post("/request/reject", { requestId: id });
+            reqDetailes();  
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
     useEffect(() => {
         getreqDetailes()
         reqDetailes()
@@ -79,20 +98,39 @@ function ViewRequest() {
                                     <th>Reject❌</th>
                                 </tr>
                             </thead>
-                            {detailes.map((item)=>{
-                        return(
-                            <tbody>
-                                <tr>
-                                    <td>{item.requesterID.fullName}</td>
-                                    <td>{item.bookId.title}</td>
-                                    <td>{new Date(item.Date).toLocaleDateString()}</td>
-                                    <td><button id="approve">Approve</button></td>
-                                    <td><button id="reject">Reject</button></td>
-                                </tr>
-                            </tbody>
-                        )
+                            {detailes.map((item) => {
+                                return (
+                                    <tbody>
+                                        <tr>
+                                            <td>{item.requesterID.email}</td>
+                                            <td>{item.bookId.title}</td>
+                                            <td>{new Date(item.Date).toLocaleDateString()}</td>
+                                            <td>
+                                                {item.status === "Pending" ? (
+                                                    <Link to="/acceptrequest">
+                                                        <button id="approve" onClick={() => handleApprove(item._id)}>
+                                                            Approve
+                                                        </button></Link>
+                                                ) : item.status === "Accepted" ? (
+                                                    <span >✅</span>
 
-                    })}
+                                                ) : null}
+                                            </td>
+                                            <td>
+                                                {item.status === "Pending" ? (
+                                                    <button id="reject" onClick={() => handleReject(item._id)}>
+                                                        Reject
+                                                    </button>
+                                                ) : item.status === "Rejected" ? (
+                                                    <span>❌</span>
+                                                ) : null}
+                                            </td>
+
+                                        </tr>
+                                    </tbody>
+                                )
+
+                            })}
 
                         </table>
                     </div>

@@ -4,7 +4,7 @@ justify-content: center;
    flex-direction: column;
    align-items: center;
    height: 100vh;
-   background-image: url(https://thumbs.dreamstime.com/b/autumn-books-back-to-school-halloween-reads-cozy-reading-garden-maple-leaves-pumpkins-study-education-college-411348830.jpg);
+   background-image: url(https://static.vecteezy.com/system/resources/thumbnails/027/762/756/small/open-book-on-blue-background-back-to-school-concept-copy-space-generative-ai-photo.jpg);
    background-repeat: no-repeat;
    background-size: cover;
 }
@@ -63,7 +63,7 @@ justify-content: center;
     color: rgb(212, 208, 204);
 }
 .user-login-form a{
-    color:rgb(136, 127, 215);
+    color:rgb(17, 15, 32);
 }
 .user-login-home-link {
   align-self: flex-end;

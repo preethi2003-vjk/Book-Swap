@@ -5,13 +5,13 @@ function Navbar(){
         <>
          <nav className="navbar">
             <div className="nav-logo">
-                 BookSwap
+                 📖BookDonate+
             </div>
             
             <ul className="nav-links">
-                <li><Link>Home</Link></li>
-                <li><Link>About</Link></li>
-                <li><Link>Contact</Link></li>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/about">About</Link></li>
+                <li><Link to="/contact">Contact</Link></li>
                 <li className="dropdown">
                     <Link>Sign In</Link>
                     <ul className="dropdown-menu">

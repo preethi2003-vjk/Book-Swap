@@ -1,7 +1,8 @@
-import "../Styles/libraryregistration.css"
+import "../../Styles/libraryregistration.css"
 import { useState } from "react"
 import axios from "axios"
 import { useNavigate } from "react-router"
+import { Link } from "react-router"
 function Libraryreg(){
     const[data,setdata]=useState({libraryName:"",regNo:"",email:"",phoneNumber:"",addressLine1:"",addressLine2:"",District:"",State:"",pinCode:"",password:""})
     const navigate=useNavigate()
@@ -23,6 +24,10 @@ function Libraryreg(){
     return(
         <>
         <div className="lib-reg">
+             
+            <div className="lib-home-link">
+                <Link to="/"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" stroke="black" fill="none" ><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></Link>
+            </div>
             <h2>Library Registration Page</h2>
             <form className="lib-reg-form">
                 <label htmlFor="libraryName">Library Name:</label>

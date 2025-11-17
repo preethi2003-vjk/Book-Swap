@@ -1,0 +1,97 @@
+/* Page container */
+.requestaccept-page {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Title */
+.requestaccept-title {
+   margin: 0;
+  padding: 0;
+  display: inline-block;
+  color: #333;
+  font-weight: bolder;
+  font-size: xx-large;
+}
+
+/* Form Box */
+.requestaccept-form {
+  background: white;
+  width: 400px;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px 40px;
+}
+
+/* Labels */
+.requestaccept-form label {
+  font-weight:bold;
+  font-size:large;
+}
+
+/* Input & Textarea */
+.requestaccept-form input,
+.requestaccept-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+}
+
+.requestaccept-form textarea {
+  resize: vertical;
+  min-height: 70px;
+}
+
+/* Button */
+.requestaccept-btn {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: large;
+  cursor: pointer;
+  margin-top: 5px;
+  width: 200px;
+  align-self: center;
+ 
+}
+
+.requestaccept-btn:hover {
+  background-color: #45a049;
+}
+/* Header row: icon + title */
+.requestaccept-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+  width: auto;
+}
+
+/* Back Icon styling */
+.back-icon {
+  cursor: pointer;
+  color: #333;
+
+  
+}
+
+.back-icon:hover {
+  color: #4caf50;
+  
+}
+

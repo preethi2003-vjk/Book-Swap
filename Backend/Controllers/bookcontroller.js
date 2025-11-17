@@ -3,6 +3,7 @@ const router=express.Router()
 const jwt=require("jsonwebtoken")
 const bcrypt=require("bcrypt")
 const Book=require("../Models/book.js")
+const Request=require("../Models/request.js")
 const upload=require("../services/imageservices.js")
 router.post("/add",upload.single("cover_Image"),async(req,res)=>{
     try{
@@ -54,13 +55,34 @@ router.get("/viewall",async(req,res)=>{
     const decoded=jwt.verify(token,process.env.JWT_TOKEN)
     
     const books=await Book.find({UserID:{$ne:decoded.id}})
+    console.log(books)
+    const request=await Request.find({requesterID:decoded.id}).select("bookId")
+    console.log(request)
+    const idArray=request.map((item)=>{
+            return item.bookId.toString()
+    })
+    console.log(idArray)
+    
     if(!books){
         res.status(404).send({message:"No books found"})
         
     }
     else{
+        if(idArray.length==0){
+            res.send(books)
+            return
+        }
         
-        res.send(books)
+        let newBooks=books.map((book)=>{
+        if(idArray.includes(book._id.toString())){
+            return {...book.toJSON(),disabled:true}
+        }
+        else{
+            return book
+        }
+    })
+        
+        res.send(newBooks)
     }
 })
 module.exports=router

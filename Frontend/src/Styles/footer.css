@@ -1,6 +1,6 @@
 .footer {
-  background-color: #2c3e50;
-  color: #ecf0f1;
+  background-color: #f0f2f4;
+  color: #0a0c0c;
   text-align: center;
   padding: 20px 0;
   font-family: 'Poppins', sans-serif;
@@ -13,7 +13,7 @@
 }
 
 .footer-links a {
-  color: #ecf0f1;
+  color: #0a0b0b;
   text-decoration: none;
   margin: 0 10px;
   font-weight:bold;
@@ -21,7 +21,7 @@
 }
 
 .footer-links a:hover {
-  color: #ffcc00;
+  color: #4f2cec;
 }
 
 .social-links p {
@@ -30,7 +30,7 @@
 }
 
 .social-links a {
-  color: #ecf0f1;
+  color: #151717;
   text-decoration: none;
   margin: 0 5px;
   font-weight: bold;
@@ -38,13 +38,13 @@
 }
 
 .social-links a:hover {
-  color: #ffcc00;
+  color: #4f2cec;
 }
 
 .copyright {
   margin-top: 10px;
   font-size: large;
-  color: #bdc3c7;
+  color: #1f2529;
 
   font-weight: bold;
 }

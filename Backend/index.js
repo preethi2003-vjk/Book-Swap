@@ -17,6 +17,8 @@ const bookctrl=require("./Controllers/bookcontroller.js")
 app.use("/book",bookctrl)
 const requestctrl=require("./Controllers/requestcontroller.js")
 app.use("/request",requestctrl)
+const lib_book=require("./Controllers/librarybookcontroller.js")
+app.use("/lib_books",lib_book)
 app.listen(8080,()=>{
      console.log("Server running at port no:8080")
 })

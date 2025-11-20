@@ -60,7 +60,7 @@ function ViewRequest() {
                                     <tbody>
                                         <tr>
                                             <td>{item.bookId.title}</td>
-                                            <td>{new Date(item.Date).toLocaleDateString()}</td>
+                                            <td>{new Date(item.createdAt).toLocaleDateString()}</td>
                                             <td
                                                 className={`badge ${item.status === "Accepted"
                                                     ? "badge-green"

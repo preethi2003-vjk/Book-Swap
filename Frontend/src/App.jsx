@@ -19,6 +19,8 @@ import ViewDonation from './Pages/User/viewdonations'
 import Updateprofile from './Pages/User/updateprofile'
 import ViewRequest from './Pages/User/viewrequest'
 import Requestaccept from './Pages/User/requestaccept'
+import Librarydash from './Pages/Library/librarydash'
+import LibraryProfile from './Pages/Library/libraryprofile'
 function App() {
   
 
@@ -34,6 +36,7 @@ function App() {
           <Route path="/user-register" element={<Userregister/>}/>
          <Route path="/librarylogin" element={<Librarylogin/>}/> 
          <Route path="/library-register" element={<Libraryreg/>}/> 
+         <Route path="/lib-profile" element={<LibraryProfile/>}/> 
          <Route path="/user-profile" element={<Userprofile/>}/> 
          <Route path="/user-dash" element={<Userdash/>}/> 
          <Route path="/user-donation" element={<Userdonation/>}/> 
@@ -41,6 +44,7 @@ function App() {
          <Route path="/updateprofile" element={<Updateprofile/>}/> 
          <Route path="/viewrequest" element={<ViewRequest/>}/> 
          <Route path="/acceptrequest" element={<Requestaccept/>}/> 
+         <Route path="/libdash" element={<Librarydash/>}/> 
       </Routes>
     </>
   )

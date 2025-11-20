@@ -1,20 +1,38 @@
 import "../../Styles/libraryregistration.css"
 import { useState } from "react"
-import axios from "axios"
+import instance from "../../utils/apiclient"
 import { useNavigate } from "react-router"
 import { Link } from "react-router"
 function Libraryreg(){
     const[data,setdata]=useState({libraryName:"",regNo:"",email:"",phoneNumber:"",addressLine1:"",addressLine2:"",District:"",State:"",pinCode:"",password:""})
+    const[file,setfile]=useState(null)
     const navigate=useNavigate()
     function change(e){
         e.preventDefault()
         setdata({...data,[e.target.name]:e.target.value})
     }
+     function uploadimage(e){
+        e.preventDefault()
+        setfile(e.target.files[0])
+    }
     async function register(e){
         e.preventDefault()
         try{
-            const response=await axios.post("http://localhost:8080/library/register",data)
+            const formData=new FormData()
+            formData.append("libraryName",data.libraryName)
+            formData.append("regNo",data.regNo)
+            formData.append("email",data.email)
+            formData.append("phoneNumber",data.phoneNumber)
+            formData.append("addressLine1",data.addressLine1)
+            formData.append("addressLine2",data.addressLine2)
+            formData.append("District",data.District)
+            formData.append("State",data.State)
+            formData.append("pinCode",data.pinCode)
+            formData.append("password",data.password)
+            formData.append("Profile_pic",file)
+            const response=await instance.post("/library/register",formData)
             alert("Registration Successfull")
+    
             navigate("/librarylogin")
         }
         catch{
@@ -53,7 +71,7 @@ function Libraryreg(){
                 <label htmlFor="cpassword">Confirm Password:</label>
                 <input type="password" name="cpassword" placeholder="Confirm your password" onChange={change}/>
                 <label htmlFor="profilePicture">Profile Image:</label>
-                <input type="file" name="profilePicture" onChange={change}/>
+                <input type="file"  onChange={uploadimage}/>
                 <button type="submit" onClick={register}>Register</button>
             </form>
         </div>

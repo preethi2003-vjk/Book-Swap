@@ -5,7 +5,7 @@ function Usernavbar(){
         <>
         <nav className="usernavbar">
             <div className="user-nav-logo">
-               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9_VxAvN0GlgunIAAXYNuPxYoyO0uSkrXJcg&s" alt="" />
+               <img src="https://images-platform.99static.com//WAzFi3CYkjf9MmkoQ-EqspbhU0M=/417x373:3120x3076/fit-in/500x500/projects-files/68/6887/688798/be3aab78-057b-4706-bb98-a2bef7b0a82d.jpg" alt="" />
             </div>
             
             <ul className="user-nav-links">

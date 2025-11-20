@@ -1,4 +1,4 @@
-.usernavbar{
+.libnavbar{
      display: flex;
     
     align-items: center;
@@ -7,41 +7,41 @@
     padding: 5px 40px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
-.user-nav-logo img{
+.lib-nav-logo img{
     border-radius: 50%;
      width: 100px;
      height: 100px;
      margin-right: 20px;
 
 }
-.user-nav-links{
+.lib-nav-links{
      display: flex;
     list-style: none;
     gap: 30px;
     margin: 0;
     padding: 0;
 }
-.user-nav-links a{
+.lib-nav-links a{
     text-decoration: none;
     color:#333;
     font-size:large;
     font-weight: bold;
 
 }
-.user-nav-links a:hover{
-    color:#0077cc
+.lib-nav-links a:hover{
+    color:#e99a23
     
 }
-.user-profile-request{
+.lib-profile-request{
  
     margin-left: auto;
   
     
 }
-.user-profile-request a{
+.lib-profile-request a{
   margin-right: 30px;
 }
-.user-profile-request a svg{
+.lib-profile-request a svg{
     cursor: pointer;
     
   
@@ -49,10 +49,10 @@
 
 
 
-.user-profile-request a:hover svg{
-    stroke: #0077cc;
+.lib-profile-request a:hover svg{
+    stroke:#e99a23;
 }
-.user-logout{
+.lib-logout{
     margin-left: 30px;
 
 }

@@ -1,0 +1,46 @@
+.libdashboard {
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.lib-left img {
+  width: 100%;
+  height: 90vh;
+  border-radius: 12px;
+  margin-right: 20px;
+  margin-top: 0px;
+  
+}
+
+.lib-right {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px;
+  margin-top: 150px;
+  
+}
+
+.lib-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  text-align: center;
+  width: 180px;
+}
+
+.lib-card h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+.lib-card p {
+  font-size: 22px;
+  font-weight: bold;
+  color: #0077aa;
+}

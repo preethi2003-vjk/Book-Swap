@@ -1,0 +1,91 @@
+.libraryprofile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+   
+    padding: 20px;
+}
+
+.profiledetailes {
+    background: #fff;
+    width: 520px;
+    
+    padding: 30px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+    position: relative;
+}
+.profiledetailes input{
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    padding: 10px;
+    border-radius: 2px;
+    margin-top: 5px;
+     border: 2px solid #aaa;
+     border-radius: 4px;
+     font-size: larger;
+     background-color: transparent;
+     
+}
+
+.lib-dash-link {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.lib-profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: 20px;
+    border: 3px solid #ddd;
+    background: white;
+}
+
+.lib-name {
+    margin-top: 15px;
+    font-size: 24px;
+    color: #333;
+}
+
+.lib-regno {
+    margin-bottom: 25px;
+    font-size: 16px;
+    color: #666;
+}
+
+.lib-info-card {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px 0;
+    text-align: left;
+      display: flex;
+    flex-direction: column;
+    
+}
+
+.lib-info-card p{
+    margin: 0;
+    font-size:large;
+    color: #444;
+    
+}
+.profiledetailes button{
+     
+    margin: 20px 10px;
+    padding: 10px 10px;
+    background-color: #f29020;
+    font-size: large;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+

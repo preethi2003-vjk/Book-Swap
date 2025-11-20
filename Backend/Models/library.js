@@ -10,8 +10,7 @@ const librarySchema=mongoose.Schema({
         State:{type:String,required:true},
         pinCode:{type:String,required:true},
         password:{type:String,required:true},
-        // cpassword:{type:String,require:true},
-        profilePicture:{type:String}
+       profilePicture:{type:String}
 })
 const Library=mongoose.model("library",librarySchema)
 module.exports=Library

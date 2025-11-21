@@ -4,8 +4,9 @@ const jwt=require("jsonwebtoken")
 const upload=require("../services/imageservices.js")
 const LibBooks=require("../Models/libBooks.js")
 const Library=require("../Models/library.js")
-router.post("/add",upload.single("cover_Image"),async(req,res)=>{
+router.post("/add",upload.fields([{name:"pdf",maxCount:1},{name:"pic",maxCount:1}]),async(req,res)=>{
      try{
+        
         const{title,author,genere,publishedYear,language,description,}=req.body
         const token=req.headers.authorization.slice(7)
         const decoded=jwt.verify(token,process.env.JWT_TOKEN)
@@ -17,13 +18,15 @@ router.post("/add",upload.single("cover_Image"),async(req,res)=>{
             publishedYear,
              language,
             description,
-            // file:,
-            coverImage:req.file&&req.file?.filename,
+            file:req.files&&(req.files.pdf&&req.files.pdf[0].filename),
+            coverImage:req.files&&(req.files.pic&&req.files.pic[0].filename),
             
         })
         await book.save()
-        // await book.populate("UserID")
+        
         res.send({message:"Successfully added",book})
+      
+        console.log(req.files)
     }
     catch(e){
         if (e instanceof jwt.JsonWebTokenError || e instanceof jwt.TokenExpiredError) {

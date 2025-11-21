@@ -49,8 +49,8 @@ function ViewDonation() {
 
                 
                 <div className="my-books">
-                   {mydonations.map((item)=>{
-                    return(
+                   {mydonations.map((item)=>
+                    (
                         <div className="mybook-card">
 
                         <img src={"http://localhost:8080/uploads/"+item.coverImage}
@@ -61,7 +61,7 @@ function ViewDonation() {
                         <p>{new Date(item.Date).toLocaleDateString()}</p>
                     </div>
                     )
-                   })} 
+                   )} 
                     
                     
                 </div>

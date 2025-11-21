@@ -12,5 +12,6 @@ const librarySchema=mongoose.Schema({
         password:{type:String,required:true},
        profilePicture:{type:String}
 })
+librarySchema.index({libraryName:"text"})
 const Library=mongoose.model("library",librarySchema)
 module.exports=Library

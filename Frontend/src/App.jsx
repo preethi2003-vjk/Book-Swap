@@ -21,6 +21,8 @@ import ViewRequest from './Pages/User/viewrequest'
 import Requestaccept from './Pages/User/requestaccept'
 import Librarydash from './Pages/Library/librarydash'
 import LibraryProfile from './Pages/Library/libraryprofile'
+import Adminusersview from './Pages/Admin/adminusersview'
+import Adminlibraryview from './Pages/Admin/adminlibraryview'
 function App() {
   
 
@@ -32,6 +34,8 @@ function App() {
              <Route path="/contact" element={<Contact/>}/> 
         <Route path="/adminlogin" element={<Adminlogin/>}/>
         <Route path="/admindash" element={<Admindash/>}/>
+         <Route path="/viewusers" element={<Adminusersview/>}/>
+          <Route path="/viewlibraries" element={<Adminlibraryview/>}/>
         <Route path="/userlogin" element={<Userlogin/>}/>
           <Route path="/user-register" element={<Userregister/>}/>
          <Route path="/librarylogin" element={<Librarylogin/>}/> 

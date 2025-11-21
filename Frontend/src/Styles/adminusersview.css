@@ -1,0 +1,105 @@
+.userscontainer {
+    margin-left: 260px; /* space for sidebar */
+    padding: 40px;
+}
+
+.userscontainer h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Search Bar */
+.search-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+    justify-content: center;
+}
+
+.search-bar input {
+    padding: 10px 15px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+}
+
+.search-bar button {
+    padding: 10px 18px;
+    border: none;
+    background-color: #2563eb;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: #1d4ed8;
+}
+
+/* User Cards Grid */
+.users {
+    display: flex;
+    flex-direction: row;
+    
+    gap: 20px;
+}
+
+/* Individual Card */
+.user-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+     margin-left: 30px;
+     width:200px;
+}
+
+.user-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.user-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+/* Remove Button */
+.remove-btn {
+    margin-top: 10px;
+    background-color: #dc2626;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.remove-btn:hover {
+    background-color: #b91c1c;
+}
+.user-details {
+    text-align: left;
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+.user-details p {
+    margin: 6px 0;
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.5;
+}
+
+.user-details span {
+    font-weight: 600;
+    color: #111827;
+}
+
+

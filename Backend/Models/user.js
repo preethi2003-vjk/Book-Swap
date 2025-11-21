@@ -11,10 +11,11 @@ const userSchema=mongoose.Schema(
         pinCode:{type:String,required:true},
         Country:{type:String,required:true},
         password:{type:String,required:true},
-       
-        img:{type:String}
+       img:{type:String},
+       Approved:{type:Boolean,default:false}
  }
 
 )
+userSchema.index({fullName:"text"})
 const User=mongoose.model("user",userSchema)
 module.exports=User

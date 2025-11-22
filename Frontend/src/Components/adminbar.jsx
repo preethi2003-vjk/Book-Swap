@@ -47,7 +47,7 @@ function AdminSidebar() {
           </li>
 
           <li>
-            <Link to="/viewrequest">
+            <Link to="/viewreq">
               <span className="icon">📩</span> Requests
             </Link>
           </li>

@@ -1,0 +1,131 @@
+.reqcontainer {
+    margin-left: 300px; /* space for sidebar */
+    padding: 30px;
+    background: #f5f6fa;
+    min-height: 100vh;
+    font-family: "Poppins", sans-serif;
+}
+
+.reqcontainer h1 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    text-align: center;
+    color: #333;
+}
+
+/* Status Buttons */
+.status-btn {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+  
+}
+
+.status-btn button {
+   
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: large;
+     
+}
+/* Status Buttons */
+.pending-btn {
+    background-color: #ffcc80;   /* light orange */
+    color: #e67e22;              /* dark orange */
+}
+
+.accepted-btn {
+    background-color: #b2fab4;   /* light green */
+    color: #1b8a1b;              /* dark green */
+}
+
+.rejected-btn {
+    background-color: #f8b7b7;   /* light red */
+    color: #d9534f;              /* dark red */
+}
+
+/* Hover Effects */
+.pending-btn:hover {
+    background-color: #e67e22;
+    color: white;
+}
+
+.accepted-btn:hover {
+    background-color: #1b8a1b;
+    color: white;
+}
+
+.rejected-btn:hover {
+    background-color: #d9534f;
+    color: white;
+}
+
+
+
+
+/* Table Container */
+.req-view {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+/* Table */
+.reqtable {
+    width: 100%;
+    border-collapse: collapse;
+    
+}
+
+.reqtable thead {
+    background: #4d5c76;
+    color: white;
+}
+
+.reqtable th {
+    padding: 14px;
+    text-align: left;
+    font-size: large;
+    letter-spacing: 0.5px;
+}
+
+.reqtable td {
+    padding: 12px 14px;
+    font-size: large;
+    color: #555;
+    border-bottom: 1px solid #eee;
+}
+
+/* Hover Effect */
+.reqtable tbody tr:hover {
+    background: #f1f7ff;
+}
+
+/* Base badge style */
+.badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    display: inline-block;
+    text-align: center;
+}
+
+.badge-green {
+    color: #1b8a1b !important;
+}
+
+.badge-red {
+    color: #d9534f !important;
+}
+
+.badge-orange {
+    color: #e67e22 !important;
+}
+

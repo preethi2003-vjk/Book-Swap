@@ -2,6 +2,7 @@ const express=require("express")
 const router=express.Router()
 const User=require("../Models/user")
 const Library=require("../Models/library")
+const Book=require("../Models/book")
 const jwt=require("jsonwebtoken")
 const Requests=require("../Models/request")
 const adminVerify=require("../Middlewares/adminmiddlewares")
@@ -40,8 +41,29 @@ router.get("/viewlibraries",adminVerify,async(req,res)=>{
     res.send({message:"Registered Libraries",libraries})
 })
 router.get("/viewrequests",adminVerify,async(req,res)=>{
-        const requests=await Requests.find()
+        const requests=await Requests.find().populate("requesterID donarId bookId","fullName fullName title")
+        
         res.send({message:"Users request",requests})
 })
+router.get("/viewreqpending",adminVerify,async(req,res)=>{
+   
+
+    const requests=await Requests.find({status:"Pending"})
+    
+    res.send({message:"Weekly requests",requests})
+})
+router.get("/viewreqapproved",adminVerify,async(req,res)=>{
+    const requests=await Requests.find({status:"Approved"})
+    res.send({message:"Weekly requests",requests})
+})
+router.get("/viewreqrejected",adminVerify,async(req,res)=>{
+    const requests=await Requests.find({status:"Rejected"})
+    res.send({message:"Weekly requests",requests})
+})
+router.get("/viewdonations",adminVerify,async(req,res)=>{
+   const books=await Book.find().populate("UserID","fullName email")
+   res.send({message:"User Donations",books})
+})
+
 
 module.exports=router

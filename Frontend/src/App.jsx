@@ -23,6 +23,8 @@ import Librarydash from './Pages/Library/librarydash'
 import LibraryProfile from './Pages/Library/libraryprofile'
 import Adminusersview from './Pages/Admin/adminusersview'
 import Adminlibraryview from './Pages/Admin/adminlibraryview'
+import Adminreqview from './Pages/Admin/adminreqview'
+import Adminviewdonations from './Pages/Admin/adminviewdonations'
 function App() {
   
 
@@ -36,6 +38,8 @@ function App() {
         <Route path="/admindash" element={<Admindash/>}/>
          <Route path="/viewusers" element={<Adminusersview/>}/>
           <Route path="/viewlibraries" element={<Adminlibraryview/>}/>
+           <Route path="/viewdonations" element={<Adminviewdonations/>}/>
+          <Route path="/viewreq" element={<Adminreqview/>}/>
         <Route path="/userlogin" element={<Userlogin/>}/>
           <Route path="/user-register" element={<Userregister/>}/>
          <Route path="/librarylogin" element={<Librarylogin/>}/> 

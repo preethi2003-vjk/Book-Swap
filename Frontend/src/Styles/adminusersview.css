@@ -57,10 +57,10 @@
      width:200px;
 }
 
-.user-card:hover {
+/* .user-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-}
+} */
 
 .user-card img {
     width: 80px;
@@ -70,7 +70,7 @@
 }
 
 /* Remove Button */
-.remove-btn {
+.block-btn {
     margin-top: 10px;
     background-color: #dc2626;
     color: white;
@@ -81,8 +81,22 @@
     transition: 0.2s ease;
 }
 
-.remove-btn:hover {
+.block-btn:hover {
     background-color: #b91c1c;
+}
+.active-btn {
+    margin-top: 10px;
+    background-color: #1e9311;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.active-btn:hover {
+    background-color: #3cc044;
 }
 .user-details {
     text-align: left;

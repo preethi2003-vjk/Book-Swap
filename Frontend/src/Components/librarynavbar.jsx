@@ -13,8 +13,8 @@ function Librarynavbar(){
                 <li className="dropdown">
                     <Link>Books</Link>
                     <ul className="dropdown-content">
-                        <li><Link to="">Add</Link></li>
-                        <li><Link to="">View</Link></li>
+                        <li><Link to="/lib-addbooks">Add</Link></li>
+                        <li><Link to="/libviewbooks">View</Link></li>
                         </ul>
                         </li>
                 <li><Link to="">Users</Link></li>

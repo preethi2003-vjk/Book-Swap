@@ -37,6 +37,10 @@ router.post("/login",async(req,res)=>{
     } 
     
     else{
+         if(!user.Approved){
+            return res.status(400).send({message:"Admin not permitted"})
+         }
+         
         const iscrtpassword= bcrypt.compareSync(password,user.password)
         if(iscrtpassword){
             const token=jwt.sign({id:user._id},process.env.JWT_TOKEN)

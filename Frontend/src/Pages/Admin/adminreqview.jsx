@@ -4,23 +4,40 @@ import { useState, useEffect } from "react"
 import AdminSidebar from "../../Components/adminbar"
 function Adminreqview() {
     const[req,setreq]=useState([])
-    async function getreqinfo(){
-        const response=await instance .get("/admin/viewrequests")
-        setreq(response.data.requests)
+    const[click,setclick]=useState(0)
+    async function getreqinfo(i){
+        let response
+        if(i==0){
+             response=await instance.get("/admin/viewrequests")
+           
+        }
+        else if(i==1){
+             response=await instance.get("/admin/viewreqpending")
+           
+        }
+        else if(i==2){
+             response=await instance.get("/admin/viewreqapproved")
+           
+        }
+        else{
+             response=await instance.get("/admin/viewreqrejected")
+         
+        }
+         setreq(response.data.requests)
     }
    
     useEffect(()=>{
-            getreqinfo()
-    },[])
+            getreqinfo(click)
+    },[click])
     return (
         <>
             <AdminSidebar />
             <div className="reqcontainer">
                 <h1>Donation Request Dashboard</h1>
                 <div className="status-btn">
-                    <button className="pending-btn">Pending</button>
-                    <button className="accepted-btn" >Accepted</button>
-                    <button className="rejected-btn" >Rejected</button>
+                    <button className="pending-btn" onClick={()=>{setclick(1)}}>Pending</button>
+                    <button className="accepted-btn" onClick={()=>{setclick(2)}}>Accepted</button>
+                    <button className="rejected-btn" onClick={()=>{setclick(3)}}>Rejected</button>
                 </div>
                 <div className="req-view">
                     <table className="reqtable">

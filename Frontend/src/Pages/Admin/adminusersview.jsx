@@ -5,6 +5,7 @@ import AdminSidebar from "../../Components/adminbar";
 
 function Adminusersview() {
     const [detailes, setdetailes] = useState([])
+    const[refresh,setrefresh]=useState(false)
     const[line,setline]=useState("")
     const searchref=useRef()
     async function getuserinfo() {
@@ -13,12 +14,20 @@ function Adminusersview() {
     }
     function search() {
         setline("?search="+searchref.current.value)
-}
+    }
+    async function blockbtnclick(userid){
+        await instance.patch("/admin/reject",{userid})
+        setrefresh(!refresh)
+    }
+    async function activebtnclick(userid){
+          await instance.patch("/admin/active",{userid})
+          setrefresh(!refresh)
+    }
 
 
     useEffect(() => {
         getuserinfo()
-    }, [line])
+    }, [line,refresh])
     return (
         <>
             <AdminSidebar />
@@ -47,8 +56,8 @@ function Adminusersview() {
                                          {item.District}, {item.State}-{item.pinCode}
                                     </p>
                                 </div>
-
-                                <button className="remove-btn">Remove</button>
+                                {item.Approved?<button className="block-btn" onClick={()=>{blockbtnclick(item._id)}}>Block</button>:<button className="active-btn" onClick={()=>{activebtnclick(item._id)}}>Active</button>}
+                                
                             </div>
                         )
                     })}

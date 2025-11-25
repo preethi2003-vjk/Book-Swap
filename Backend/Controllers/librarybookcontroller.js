@@ -36,4 +36,16 @@ router.post("/add",upload.fields([{name:"pdf",maxCount:1},{name:"pic",maxCount:1
         res.status(400).send({ message: "Error Occured", error: e })
     }
 })
+router.get("/view",async(req,res)=>{
+    const token=req.headers.authorization.slice(7)
+    const decoded=jwt.verify(token,process.env.JWT_TOKEN)
+    const books=await LibBooks.find({LibraryID:decoded.id})
+    if(!books){
+        res.status(404).send({message:"No books found"})
+        
+    }
+    else{
+        res.send(books)
+    }
+})
 module.exports=router

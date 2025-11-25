@@ -40,11 +40,7 @@ function AdminSidebar() {
             </Link>
           </li>
 
-          <li>
-            <Link to="/viewapprovals">
-              <span className="icon">✔️</span> Approvals
-            </Link>
-          </li>
+         
 
           <li>
             <Link to="/viewreq">

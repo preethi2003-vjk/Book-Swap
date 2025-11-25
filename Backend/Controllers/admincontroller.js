@@ -48,22 +48,33 @@ router.get("/viewrequests",adminVerify,async(req,res)=>{
 router.get("/viewreqpending",adminVerify,async(req,res)=>{
    
 
-    const requests=await Requests.find({status:"Pending"})
+    const requests=await Requests.find({status:"Pending"}).populate("requesterID donarId bookId","fullName fullName title")
     
     res.send({message:"Weekly requests",requests})
 })
 router.get("/viewreqapproved",adminVerify,async(req,res)=>{
-    const requests=await Requests.find({status:"Approved"})
+    const requests=await Requests.find({status:"Approved"}).populate("requesterID donarId bookId","fullName fullName title")
     res.send({message:"Weekly requests",requests})
 })
 router.get("/viewreqrejected",adminVerify,async(req,res)=>{
-    const requests=await Requests.find({status:"Rejected"})
+    const requests=await Requests.find({status:"Rejected"}).populate("requesterID donarId bookId","fullName fullName title")
     res.send({message:"Weekly requests",requests})
 })
 router.get("/viewdonations",adminVerify,async(req,res)=>{
    const books=await Book.find().populate("UserID","fullName email")
    res.send({message:"User Donations",books})
 })
+router.patch("/active",adminVerify,async(req,res)=>{
+    const userid=req.body.userid
+    const user=await User.findByIdAndUpdate(userid,{Approved:true})
+    res.send({message:"User Activated",user})
 
+})
+router.patch("/reject",adminVerify,async(req,res)=>{
+    const userid=req.body.userid
+    const user=await User.findByIdAndUpdate(userid,{Approved:false})
+    res.send({message:"User Activated",user})
+
+})
 
 module.exports=router

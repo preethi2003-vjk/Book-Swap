@@ -25,6 +25,9 @@ import Adminusersview from './Pages/Admin/adminusersview'
 import Adminlibraryview from './Pages/Admin/adminlibraryview'
 import Adminreqview from './Pages/Admin/adminreqview'
 import Adminviewdonations from './Pages/Admin/adminviewdonations'
+import Libraryaddbooks from './Pages/Library/libraryaddbooks'
+import Libraryviewbooks from './Pages/Library/libraryviewbook'
+
 function App() {
   
 
@@ -45,6 +48,7 @@ function App() {
          <Route path="/librarylogin" element={<Librarylogin/>}/> 
          <Route path="/library-register" element={<Libraryreg/>}/> 
          <Route path="/lib-profile" element={<LibraryProfile/>}/> 
+          <Route path="/lib-addbooks" element={<Libraryaddbooks/>}/> 
          <Route path="/user-profile" element={<Userprofile/>}/> 
          <Route path="/user-dash" element={<Userdash/>}/> 
          <Route path="/user-donation" element={<Userdonation/>}/> 
@@ -53,6 +57,8 @@ function App() {
          <Route path="/viewrequest" element={<ViewRequest/>}/> 
          <Route path="/acceptrequest" element={<Requestaccept/>}/> 
          <Route path="/libdash" element={<Librarydash/>}/> 
+          <Route path="/libviewbooks" element={<Libraryviewbooks/>}/> 
+          
       </Routes>
     </>
   )

@@ -40,8 +40,8 @@
 
 /* User Cards Grid */
 .libraries {
-    display: flex;
-    flex-direction: row;
+     display: grid;
+    grid-template-columns: repeat(4, 1fr); 
     
     gap: 20px;
 }

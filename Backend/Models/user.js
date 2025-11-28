@@ -2,6 +2,8 @@ const mongoose=require("mongoose")
 const userSchema=mongoose.Schema(
     {
         fullName:{type:String,required:true},
+        Gender:{type:String,required:true},
+        DOB:{type:String,required:true},
         email:{type:String,required:true},
         phoneNumber:{type:String,required:true},
         addressLine1:{type:String,required:true},

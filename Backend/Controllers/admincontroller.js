@@ -73,7 +73,19 @@ router.patch("/active",adminVerify,async(req,res)=>{
 router.patch("/reject",adminVerify,async(req,res)=>{
     const userid=req.body.userid
     const user=await User.findByIdAndUpdate(userid,{Approved:false})
-    res.send({message:"User Activated",user})
+    res.send({message:"User rejected",user})
+
+})
+router.patch("/approve",adminVerify,async(req,res)=>{
+    const libraryid=req.body.libraryid
+    const library=await Library.findByIdAndUpdate(libraryid,{Approved:true})
+    res.send({message:"Library Activated",library})
+
+})
+router.patch("/block",adminVerify,async(req,res)=>{
+    const libraryid=req.body.libraryid
+    const library=await Library.findByIdAndUpdate(libraryid,{Approved:false})
+    res.send({message:"Library rejected",library})
 
 })
 

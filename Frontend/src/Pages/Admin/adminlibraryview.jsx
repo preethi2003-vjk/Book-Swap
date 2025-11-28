@@ -4,6 +4,7 @@ import { useState,useEffect,useRef } from "react";
 import instance from "../../utils/apiclient";
 function Adminlibraryview(){
        const [detailes, setdetailes] = useState([])
+       const[refresh,setrefresh]=useState(false)
     const[line,setline]=useState("")
     const searchref=useRef()
     async function getlibraryinfo() {
@@ -13,12 +14,20 @@ function Adminlibraryview(){
     }
     function search() {
         setline("?search="+searchref.current.value)
-}
+    }
+    async function blockbtnclick(libraryid){
+        await instance.patch("/admin/block",{libraryid})
+        setrefresh(!refresh)
+    }
+    async function activebtnclick(libraryid){
+          await instance.patch("/admin/approve",{libraryid})
+          setrefresh(!refresh)
+    }
 
 
     useEffect(() => {
         getlibraryinfo()
-    }, [line])
+    }, [line,refresh])
     return(
         <>
         <AdminSidebar/>
@@ -49,7 +58,7 @@ function Adminlibraryview(){
                                     </p>
                                 </div>
 
-                                <button className="lib-remove-btn">Remove</button>
+                                {item.Approved?<button className="block-btn" onClick={()=>{blockbtnclick(item._id)}}>Block</button>:<button className="active-btn" onClick={()=>{activebtnclick(item._id)}}>Active</button>}
                             </div>
                         )
                     })}

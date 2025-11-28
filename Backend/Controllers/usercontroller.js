@@ -2,14 +2,17 @@ const express=require("express")
 const jwt=require("jsonwebtoken")
 const bcrypt=require("bcrypt")
 const router=express.Router()
+const Library=require("../Models/library.js")
 const upload=require("../services/imageservices.js")
 const User=require("../Models/user.js")
 const UserVerify=require("../Middlewares/usermidlleware.js")
 router.post("/register",upload.single("Profile_pic"),async(req,res)=>{
-    const {fullName,email,phoneNumber,addressLine1,addressLine2,District,State,pinCode,password,Country}=req.body
+    const {fullName,Gender,DOB,email,phoneNumber,addressLine1,addressLine2,District,State,pinCode,password,Country}=req.body
     const hashPassword=await bcrypt.hashSync(password,10)
     const newUser=new User({
         fullName,
+        Gender,
+        DOB,
         email,
         phoneNumber,
         addressLine1,
@@ -84,5 +87,12 @@ router.put("/updateprofile",UserVerify,upload.single("Profile_pic"),async(req,re
     res.send({message:"Updated"})
     
    
+})
+router.get("/viewlibraries",UserVerify,async(req,res)=>{
+        const Libraries=await Library.find()
+        if(!Libraries){
+            return res.status(404).send({message:"No Libraries Found"})
+        }
+        res.send({message:"Registered Libraries",Libraries})
 })
 module.exports=router

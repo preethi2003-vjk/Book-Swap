@@ -1,6 +1,23 @@
 import Librarynavbar from "../../Components/librarynavbar"
 import "../../Styles/libdash.css"
+import { useEffect,useState } from "react"
+import instance from "../../utils/apiclient"
 function Librarydash(){
+    const[membercount,setmembercount]=useState(0)
+    const[bookcount,setbookcount]=useState(0)
+    useEffect(()=>{
+        async function fetchMemberCount(){
+        const response=await instance.get("/library/countmembers")
+        setmembercount(response.data)
+        }
+        async function fetchBookCount(){
+            const response=await instance.get("/library/countbooks")
+            setbookcount(response.data)
+        }
+        fetchMemberCount()
+        fetchBookCount()
+
+    },[])
     return(
         <>
         <Librarynavbar/>
@@ -16,12 +33,12 @@ function Librarydash(){
 
         <div className="lib-card">
             <h3>Total Members</h3>
-            <p></p>
+            <p>{membercount?.count}</p>
         </div>
 
         <div className="lib-card">
             <h3>Total Books</h3>
-            <p></p>
+            <p>{bookcount?.count}</p>
         </div>
 
         <div className="lib-card">

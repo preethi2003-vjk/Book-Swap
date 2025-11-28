@@ -58,7 +58,7 @@ function Librarylogin(){
             <input type="password" name="password" placeholder="Enter your password" onChange={change}/>
             <p>{error.password}</p>
             <button type="submit" onClick={login}>Login</button>
-             <h3>Don't have an account?? <Link to="/user-register">Click here!!</Link></h3>
+             <h3>Don't have an account?? <Link to="/library-register">Click here!!</Link></h3>
         </form>
       </div>
      

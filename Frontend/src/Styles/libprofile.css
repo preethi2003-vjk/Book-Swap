@@ -87,5 +87,22 @@
     border-radius: 10px;
     cursor: pointer;
 }
+.lib-edit-input {
+  width: 90%;
+  padding: 10px 14px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+
+  
+}
+
+
+
+.lib-info-card {
+  margin-bottom: 18px;
+}
+
 
 

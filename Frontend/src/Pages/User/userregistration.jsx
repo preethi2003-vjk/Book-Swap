@@ -6,7 +6,7 @@ import countryList from "../../utils/countries"
 import { Link } from "react-router"
 function Userregister(){
     const navigate=useNavigate()
-    const[data,setdata]=useState({fullName:"",email:"",phoneNumber:"",addressLine1:"",addressLine2:"",District:"",State:"",pinCode:"",Country:"",password:"",cpassword:""})
+    const[data,setdata]=useState({fullName:"",Gender:"",DOB:"",email:"",phoneNumber:"",addressLine1:"",addressLine2:"",District:"",State:"",pinCode:"",Country:"",password:"",cpassword:""})
     const[file,setfile]=useState(null)
     function change(e){
         e.preventDefault()
@@ -21,6 +21,8 @@ function Userregister(){
         try{
             const formData=new FormData()
             formData.append("fullName",data.fullName)
+            formData.append("Gender",data.Gender)
+            formData.append("DOB",data.DOB)
             formData.append("email",data.email)
             formData.append("phoneNumber",data.phoneNumber)
             formData.append("addressLine1",data.addressLine1)
@@ -55,6 +57,20 @@ function Userregister(){
                
                 <label htmlFor="fullName">Full Name:</label>
                 <input type="text" name="fullName" placeholder="Enter your fullname" onChange={change}/>
+                <label htmlFor="Gender">Gender:</label>
+                  <div className="gender-group">
+                   
+                        <input type="radio" name="Gender" value="Male" onChange={change} /> Male
+                    
+                   
+                        <input type="radio" name="Gender" value="Female" onChange={change} /> Female
+                    
+                   
+                        <input type="radio" name="Gender" value="Other" onChange={change} /> Other
+                    
+                </div>
+                <label htmlFor="DOB">DOB:</label>
+                <input type="date" name="DOB" onChange={change} />
                 <label htmlFor="email">Email:</label>
                 <input type="email" name="email" placeholder="Enter your email" onChange={change}/>
                 <label htmlFor="phoneNumber">PhoneNumber:</label>

@@ -27,6 +27,9 @@ import Adminreqview from './Pages/Admin/adminreqview'
 import Adminviewdonations from './Pages/Admin/adminviewdonations'
 import Libraryaddbooks from './Pages/Library/libraryaddbooks'
 import Libraryviewbooks from './Pages/Library/libraryviewbook'
+import ViewLibraries from './Pages/User/userviewlibraries'
+import LibRequests from './Pages/Library/librequests'
+import Libmembers from './Pages/Library/libviewmembers'
 
 function App() {
   
@@ -58,7 +61,9 @@ function App() {
          <Route path="/acceptrequest" element={<Requestaccept/>}/> 
          <Route path="/libdash" element={<Librarydash/>}/> 
           <Route path="/libviewbooks" element={<Libraryviewbooks/>}/> 
-          
+          <Route path="/userviewlib" element={<ViewLibraries/>}/> 
+          <Route path="/libreq" element={<LibRequests/>}/> 
+          <Route path="/libmembers" element={<Libmembers/>}/> 
       </Routes>
     </>
   )

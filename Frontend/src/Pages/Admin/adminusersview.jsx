@@ -15,6 +15,22 @@ function Adminusersview() {
     function search() {
         setline("?search="+searchref.current.value)
     }
+    function getAge(dob) {
+    const birthDate = new Date(dob);
+    const today = new Date();
+
+    let age = today.getFullYear() - birthDate.getFullYear();
+
+    const monthDiff = today.getMonth() - birthDate.getMonth();
+    const dayDiff = today.getDate() - birthDate.getDate();
+
+    if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+        age--;
+    }
+
+    return age;
+}
+
     async function blockbtnclick(userid){
         await instance.patch("/admin/reject",{userid})
         setrefresh(!refresh)
@@ -44,6 +60,8 @@ function Adminusersview() {
                             <div className="user-card">
                                 <img src={"http://localhost:8080/uploads/" + item.img} />
                                 <h3>{item.fullName}</h3>
+                                <p>{getAge(item.DOB)}years</p>
+                                <p>{item.Gender}</p>
 
                                 <div className="user-details">
                                     <p><span>Email:</span> {item.email}</p>

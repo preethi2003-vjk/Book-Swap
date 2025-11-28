@@ -7,10 +7,11 @@ const librarySchema=mongoose.Schema({
     addressLine1:{type:String,required:true},
     addressLine2:{type:String,required:true},
     District:{type:String,required:true},
-        State:{type:String,required:true},
-        pinCode:{type:String,required:true},
-        password:{type:String,required:true},
-       profilePicture:{type:String}
+    State:{type:String,required:true},
+    pinCode:{type:String,required:true},
+    password:{type:String,required:true},
+    profilePicture:{type:String},
+    Approved:{type:Boolean,default:false}
 })
 librarySchema.index({libraryName:"text"})
 const Library=mongoose.model("library",librarySchema)

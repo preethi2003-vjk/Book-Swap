@@ -40,12 +40,14 @@ router.get("/view",async(req,res)=>{
     const token=req.headers.authorization.slice(7)
     const decoded=jwt.verify(token,process.env.JWT_TOKEN)
     const books=await LibBooks.find({LibraryID:decoded.id})
+    console.log(books)
     if(!books){
         res.status(404).send({message:"No books found"})
         
     }
     else{
         res.send(books)
+
     }
 })
 module.exports=router

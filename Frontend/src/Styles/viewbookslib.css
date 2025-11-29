@@ -1,11 +1,11 @@
-.lib-bookview {
+.user-lib-bookview {
     padding: 20px;
     width: 100%;
     min-height: 100vh;
     background-image: linear-gradient(to right,#7bc393,#31b7c2);
 }
 
-.lib-bookview h1 {
+.user-lib-bookview h1 {
     text-align: center;
     font-size: 32px;
     margin-bottom: 20px;
@@ -13,19 +13,19 @@
 }
 
 /* Back button */
-.lib-dash {
+.userview-lib {
     margin-left: 40px;
     margin-bottom: 20px;
 }
 
 /* Main container */
-.lib-box {
+.user-lib-box {
     display: flex;
     justify-content: center;
 }
 
 /* Grid layout for books */
-.add-books {
+.add-book{
     display: grid;
      grid-template-columns: repeat(4, 1fr); 
     gap: 25px;
@@ -33,85 +33,78 @@
 }
 
 /* Individual card */
-.bookview-card {
+.libbookview-card {
     background: #fff;
     border-radius: 12px;
     padding: 15px;
     box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
-   
+   width: 300px;
+    margin: 15px;
     text-align: center;
 }
 
 
 
 /* Book Image */
-.bookview-card img {
-    width: 100%;
+.libbookview-card img {
+    width: 50%;
     height: 250px;
     object-fit: cover;
     border-radius: 10px;
 }
 
 /* Book Title */
-.bookview-card h3 {
-    margin-top: 15px;
+.libbookview-card h3 {
+    margin: 5px 0;
     font-size: x-large;
     font-weight: bold;
     color: #333;
 }
 
 /* Author and Date */
-.bookview-card p {
-    margin: 5px 0;
+.libbookview-card p {
+    margin: 3px 0;
     font-size: large;
    
 }
-.lib-pdf-view {
-    padding: 10px 10px;
-  
- background-color:rgb(30, 210, 144);
-  color:white;
+/* .description{
+    margin-top: 20px;
+} */
+.description p{
+    font-size: large;
+  text-align: justify;
+   margin: 0;          /* Text right below heading */
+    line-height: 1.4;
+    color: #444;
+   
+    white-space: pre-line;
+}
+.description h5{
+    text-align: start;
+    font-size: x-large;
+     margin: 0 0 4px 0;   /* Heading on top */
+    padding: 0;
+}
+.lend-btn{
+     background-color: #1e9311;
+    color: white;
   border: none;
-  border-radius: 4px;
+  padding: 8px 15px;
+  border-radius: 6px;
   cursor: pointer;
-
- font-size: large;
 }
-.pdf-modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
+.lend-btn:hover{
+    background-color: #35e56f;
 }
-
-.pdf-modal-box {
-  width: 100%;
-  height: 100%;
-  background: white;
-  border-radius: 8px;
-  overflow: hidden;
-  position: relative;
-  animation: popupfade 0.3s ease;
-}
-
-.pdf-close-btn {
-  position: absolute;
- 
-  right:5px;
-  background: rgb(62, 61, 61);
-  color: white;
-  padding: 5px 10px;
+.userview-lib button{
+     background-color:#444;
+    color: white;
   border: none;
-  font-size: 18px;
+  padding: 8px 15px;
+  border-radius: 6px;
   cursor: pointer;
-  border-radius: 4px;
 }
+
 
 
 

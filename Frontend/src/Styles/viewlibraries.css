@@ -85,15 +85,33 @@
     color: #111827;
 }
 
-.joinbtn{
-   margin-top: 10px;
+
+
+.joinbtn-active{
     background-color: #1e9311;
     color: white;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 6px;
-    cursor: pointer;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
 }
-.joinbtn:hover{
-    background-color: #177a0c;
+.joinbtn-active:hover{
+    background-color: #4a8743;
+}
+.joinbtn-disabled{
+    background-color: #374151;
+    color: white !important;
+  cursor: not-allowed !important;
+  opacity: 0.7 !important;
+  border: none !important;
+  padding: 8px 15px !important;
+  border-radius: 6px !important;
+}
+.view-btn{
+     background-color: #1e9311;
+    color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
 }

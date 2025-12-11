@@ -9,7 +9,7 @@ const BookSchema=mongoose.Schema({
     language:{type:String,required:true},
     description:{type:String,required:true},
     coverImage:{type:String},
-    Date:{type:Date,required:true}
+    donationStatus:{type:String,enum:["true","false"],default:"false"}
 
 
 },{timestamps:true})

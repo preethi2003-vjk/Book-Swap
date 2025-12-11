@@ -60,7 +60,7 @@ function Userlogin() {
                     <input type="password" name="password" onChange={change} />
                     <p>{error.password}</p>
                     <button type="submit" onClick={login}>Login</button>
-                    <h3>Don't have an account?? <Link to="/user-register">Click here!!</Link></h3>
+                    <h3>Don't have an account??   <Link to="/user-register">Register here!!</Link></h3>
                 </form>
 
             </div>

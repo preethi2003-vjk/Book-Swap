@@ -7,9 +7,19 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
-.user-dash-link {
-  align-self: flex-end;
-  margin: 15px 30px 0 0;
+.user-dash-link  {
+  align-self: flex-start;
+ margin-left: 30px;
+}
+.user-dash-link button{
+     padding: 10px 20px;
+    font-size: large;
+    background-color: #f69449;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
 }
 .user-donation-form{
      display: flex;
@@ -40,6 +50,9 @@
      font-size: larger;
      background-color: transparent;
 }
+.user-donation-form input::placeholder{
+    color: black;
+}
 .user-donation-form button{
     padding: 10px 20px;
    margin-top: 10px;
@@ -64,4 +77,7 @@
      border-radius: 4px;
      font-size: x-large;
      background-color: transparent;
+}
+.user-donation-form textarea::placeholder{
+    color: black;
 }

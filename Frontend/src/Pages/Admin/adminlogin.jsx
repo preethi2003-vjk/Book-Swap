@@ -54,10 +54,10 @@ function Adminlogin(){
             <h2>Admin Login Page</h2>
             <form  className="admin-login-form">
             <label htmlFor="username">UserName:</label>
-            <input type="text" name="username" onChange={change} />
+            <input type="text" name="username" onChange={change} placeholder="Enter the username"/>
             <p>{error.username}</p>
             <label htmlFor="password">Password:</label>
-            <input type="password" name="password" onChange={change} />
+            <input type="password" name="password" onChange={change} placeholder="Enter the password"/>
             <p>{error.password}</p>
             <button type="submit" onClick={login}>Login</button>
             </form>

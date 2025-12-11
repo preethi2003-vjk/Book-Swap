@@ -29,7 +29,7 @@ function Userdonation(){
                 formData.append("cover_Image",file)
                 const response=await instance.post("/book/add",formData)
                 alert("Donation Success")
-                navigate("/user-donation")
+                navigate("/viewdonation")
             }
             catch{
                     alert("Donation Failed")
@@ -41,7 +41,7 @@ function Userdonation(){
         <>
           <div className="user-donation">
                 <div className="user-dash-link">
-                <Link to="/user-dash"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" stroke="black" fill="none" ><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></Link>
+                <Link to="/user-dash"><button>Back</button></Link>
             </div>
             <h1>Donation Page</h1>
             <form className="user-donation-form">
@@ -52,7 +52,7 @@ function Userdonation(){
                 <label htmlFor="genere">Genere:</label>
                 <input type="text" name="genere" placeholder="Enter the book type"onChange={change}/>
                 <label htmlFor="publishedYear">Published Year:</label>
-                <input type="number" name="publishedYear" placeholder="Enter the year it was published "onChange={change}/>
+                <input type="text" name="publishedYear" placeholder="Enter the year it was published "onChange={change}/>
                 <label htmlFor="ISBN">ISBN:</label>
                 <input type="text"  name="ISBN"placeholder="Enter the ISBN number"onChange={change}/>
                 <label htmlFor="language">Book Language:</label>

@@ -31,6 +31,8 @@ import ViewLibraries from './Pages/User/userviewlibraries'
 import LibRequests from './Pages/Library/librequests'
 import Libmembers from './Pages/Library/libviewmembers'
 import Viewbookslib from './Pages/User/viewlibbooks'
+import ViewLendedbooks from './Pages/User/viewlendedbooks'
+import ViewlendedDetailes from './Pages/Library/bookslend'
 function App() {
   
 
@@ -65,6 +67,8 @@ function App() {
           <Route path="/libreq" element={<LibRequests/>}/> 
           <Route path="/libmembers" element={<Libmembers/>}/> 
             <Route path="/viewlib-books/:id" element={<Viewbookslib/>}/> 
+              <Route path="/viewlended" element={<ViewLendedbooks/>}/> 
+                <Route path="/bookslended" element={<ViewlendedDetailes/>}/> 
       </Routes>
     </>
   )

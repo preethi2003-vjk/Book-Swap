@@ -4,6 +4,7 @@ const router=express.Router()
 const Library=require("../Models/library.js")
 const LibraryMember=require("../Models/librarymembership.js")
 const LibBooks=require("../Models/libBooks.js")
+const LendedBooks=require("../Models/lendedbooks.js")
 const upload=require("../services/imageservices.js")
 const bcrypt=require("bcrypt")
 const LibraryVerify = require("../Middlewares/librarymiddleware.js")
@@ -93,5 +94,17 @@ router.get("/countbooks",LibraryVerify,async(req,res)=>{
     const libid=req.library.id
     const count=await LibBooks.countDocuments({LibraryID:libid})
     res.send({message:"Total Books",count})
+})
+router.get("/viewlendedinfo",LibraryVerify,async(req,res)=>{
+    const libid=req.library.id
+    const detailes=await LendedBooks.find({LibraryId:libid}).populate("UserId BookId","fullName title")
+    console.log(detailes)
+    res.send({message:"Deatiles of lended books",detailes})
+})
+router.get("/countlendedbooks",LibraryVerify,async(req,res)=>{
+    const libid=req.library.id
+    const count=await LendedBooks.countDocuments({LibraryId:libid,status:"Borrowed"})
+    res.send({message:"Count of borrowed books",count})
+
 })
 module.exports=router

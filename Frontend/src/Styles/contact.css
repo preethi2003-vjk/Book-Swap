@@ -2,7 +2,7 @@
 .contact-page {
     min-height: 100vh;
     padding: 40px;
-    background-image: url(https://thumbs.dreamstime.com/b/isolated-open-book-blank-pages-creative-projects-crisp-perfect-adding-text-illustrations-white-background-382644239.jpg);
+    background-image:linear-gradient(to bottom,#82DAF5,#E9F0F2) ;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -62,5 +62,15 @@
     border-radius: 10px;
     overflow: hidden;
 }
-
+.contact-btn button {
+    padding: 10px 20px;
+    font-size: large;
+    background-color:  #f69449;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+ 
+}
 

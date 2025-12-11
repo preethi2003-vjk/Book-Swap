@@ -13,9 +13,17 @@
 }
 
 /* Back button */
-.userview-lib {
-    margin-left: 40px;
-    margin-bottom: 20px;
+.user-lib-back{
+     padding: 10px 20px;
+    font-size: large;
+    background-color: #f69449;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-left: 10px;
 }
 
 /* Main container */
@@ -70,7 +78,7 @@
 /* .description{
     margin-top: 20px;
 } */
-.description p{
+.lib-book-description p{
     font-size: large;
   text-align: justify;
    margin: 0;          /* Text right below heading */
@@ -79,7 +87,7 @@
    
     white-space: pre-line;
 }
-.description h5{
+.lib-book-description h5{
     text-align: start;
     font-size: x-large;
      margin: 0 0 4px 0;   /* Heading on top */

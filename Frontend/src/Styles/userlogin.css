@@ -42,7 +42,7 @@ justify-content: center;
 .user-login-form button{
     padding: 10px 20px;
    margin-top: 10px;
-  background-color: #007bff;
+  background-color: #0b325b;
   color: white;
   border: none;
   border-radius: 4px;
@@ -52,7 +52,7 @@ justify-content: center;
  align-self: center;
 }
 .user-login-form button:hover{
-    background-color: #3f3cf3;
+    background-color: #35353f;
 }
 .user-login-form p{
     color: red;
@@ -60,14 +60,16 @@ justify-content: center;
     font-weight: bold;
 }
 .user-login-form h3{
-    color: rgb(212, 208, 204);
+    font-size: large;
+    
 }
 .user-login-form a{
-    color:rgb(17, 15, 32);
+    color:rgb(48, 38, 123);
 }
 .user-login-home-link {
   align-self: flex-end;
 
-  margin-right: 100px;
+  margin-right: 500px;
+  margin-top: 10px;
  
 }

@@ -1,8 +1,10 @@
 import "../../Styles/requestaccept.css"
 import { Link } from "react-router"
 import { useState ,useEffect} from "react"
+import { useNavigate } from "react-router"
 import instance from "../../utils/apiclient"
 function Requestaccept(){
+    const navigate=useNavigate()
     const[detailes,setdetailes]=useState({address:"",date:"",time:""})
     const[data,setdata]=useState([])
     function change(e){
@@ -10,6 +12,7 @@ function Requestaccept(){
     }
     async function getdata(){
         const response=await instance.get("/request/receive")
+        console.log(response.data)
         setdata(response.data)
 
     }
@@ -28,7 +31,12 @@ function Requestaccept(){
     }
         try{
             const reponse=await instance.post("/request/accept",body)
+            await instance.patch("/book/updatedonationstatus",{
+                bookId:data[0]?.bookId?._id
+            })
             alert("Maile sended")
+            navigate("/viewrequest")
+
         }
         catch{
          alert("failed")

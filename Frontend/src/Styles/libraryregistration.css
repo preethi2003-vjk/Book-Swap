@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url(https://media.istockphoto.com/id/165782498/photo/opened-book-against-stack-of-books-isolated-on-blue-background.jpg?s=612x612&w=0&k=20&c=8IYYDIYZdEIJpclxVdGYx_9ylRK-YOruoHnn-eaxIqM=   );
+    background-image: url(https://png.pngtree.com/thumb_back/fh260/background/20250612/pngtree-a-closeup-of-the-bookshelves-in-an-office-library-filled-with-image_17417725.jpg );
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -64,4 +64,7 @@
 }
 .lib-reg-form button:hover{
       background-color: #3f3cf3;
+}
+.lib-reg-form p{
+  font-size: x-large;
 }

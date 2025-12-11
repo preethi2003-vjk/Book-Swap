@@ -6,6 +6,7 @@ const Library = require("../Models/library.js")
 const upload = require("../services/imageservices.js")
 const User = require("../Models/user.js")
 const LibBooks=require("../Models/libBooks.js")
+const LendedBooks=require("../Models/lendedbooks")
 const Libmembers = require("../Models/librarymembership.js")
 const UserVerify = require("../Middlewares/usermidlleware.js")
 router.post("/register", upload.single("Profile_pic"), async (req, res) => {
@@ -47,6 +48,7 @@ router.post("/login", async (req, res) => {
         }
 
         const iscrtpassword = bcrypt.compareSync(password, user.password)
+        
         if (iscrtpassword) {
             const token = jwt.sign({ id: user._id }, process.env.JWT_TOKEN)
             res.send({ message: "User Logged in Successfully", user, token })
@@ -91,21 +93,24 @@ router.put("/updateprofile", UserVerify, upload.single("Profile_pic"), async (re
 
 })
 router.get("/viewlibraries", UserVerify, async (req, res) => {
-    const Libraries = await Library.find().lean()
-    const userid = req.user.id
-    const user = await Libmembers.find({ UserId: userid }).lean()
-    console.log(user)
-    if (!Libraries) {
-        return res.status(404).send({ message: "No Libraries Found" })
-    }
-    if (!user) {
-        return res.send({ message: "Registered Libraries", Libraries })
-    }
-    const newLibraries = Libraries.map((lib) => {
+    
+    try {
+        const Libraries = await Library.find().lean(); 
+        const userid = req.user.id;
 
-        return { ...lib, disabled: user.some((item) => { return item.LibraryId.toString() === lib._id.toString() }) }
-    }).filter((lib) => { return user.some((item) => { return !((item.LibraryId.toString() === lib._id.toString()) && item.status == "Accepted") }) })
-    res.send({ message: "Registered Libraries", Libraries: newLibraries })
+      
+        const acceptedLibs = await Libmembers.find({ UserId: userid, status: "Accepted" }).lean();
+
+    
+        const newLibraries = Libraries.filter(
+            (lib) => !acceptedLibs.some((item) => item.LibraryId.toString() === lib._id.toString())
+        );
+
+        res.send({ message: "Registered Libraries", Libraries: newLibraries });
+    } catch (error) {
+        console.error(error);
+        res.status(500).send({ message: "Server error" });
+    }
 
 })
 router.get("/joinlib", UserVerify, async (req, res) => {
@@ -117,8 +122,28 @@ router.get("/joinlib", UserVerify, async (req, res) => {
     res.send({ message: "Accepted Libraries", joinedlibraries })
 })
 router.get("/view/:LibraryId",UserVerify, async (req, res) => {
-    const books = await LibBooks.find({ LibraryID: req.params.LibraryId });
-    console.log(books)
-    res.send({ books });
+    try {
+        const libraryId = req.params.LibraryId;
+
+       
+        const books = await LibBooks.find({ LibraryID: libraryId }).lean();
+
+  
+        const borrowedBooks = await LendedBooks.find({ 
+            LibraryId: libraryId, 
+            status: "Borrowed" 
+        }).lean();
+
+        
+        const booksWithStatus = books.map((book) => ({
+            ...book,
+            isBorrowed: borrowedBooks.some(lb => lb.BookId.toString() === book._id.toString())
+        }));
+
+        res.send({ books: booksWithStatus });
+    } catch (error) {
+        console.error(error);
+        res.status(500).send({ message: "Server error" });
+    }
 });
 module.exports = router

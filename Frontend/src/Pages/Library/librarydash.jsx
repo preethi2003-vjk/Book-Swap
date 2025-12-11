@@ -5,8 +5,8 @@ import instance from "../../utils/apiclient"
 function Librarydash(){
     const[membercount,setmembercount]=useState(0)
     const[bookcount,setbookcount]=useState(0)
-    useEffect(()=>{
-        async function fetchMemberCount(){
+    const[lendedbookcount,setlendedbookcount]=useState(0)
+      async function fetchMemberCount(){
         const response=await instance.get("/library/countmembers")
         setmembercount(response.data)
         }
@@ -14,8 +14,16 @@ function Librarydash(){
             const response=await instance.get("/library/countbooks")
             setbookcount(response.data)
         }
+         async function fetchlendedbookCount(){
+            const response=await instance.get("/library/countlendedbooks")
+            setlendedbookcount(response.data)
+        }
+        
+    useEffect(()=>{
+      
         fetchMemberCount()
         fetchBookCount()
+        fetchlendedbookCount()
 
     },[])
     return(
@@ -40,15 +48,9 @@ function Librarydash(){
             <h3>Total Books</h3>
             <p>{bookcount?.count}</p>
         </div>
-
-        <div className="lib-card">
-            <h3>Available Books</h3>
-            <p></p>
-        </div>
-
-        <div className="lib-card">
-            <h3>Borrowed Books</h3>
-            <p></p>
+            <div className="lib-card">
+            <h3>Books Lended</h3>
+            <p>{lendedbookcount?.count}</p>
         </div>
 
     </div>

@@ -5,7 +5,7 @@ function Contact() {
         <>
         <div className="contact-page">
             {/* Back Button */}
-                <div className="backs-btn">
+                <div className="contact-btn">
                     <Link to="/">
                         <button>⟵ Back</button>
                     </Link>

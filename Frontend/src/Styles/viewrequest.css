@@ -3,9 +3,15 @@
     padding: 40px;
     
 }
-.viewrequest svg {
-   margin-bottom: 20px;
-   cursor: pointer;
+.viewrequest button{
+   padding: 10px 20px;
+    font-size: large;
+   background-color: #f46105;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
 }
 .sent-receive{
     display: flex;
@@ -34,7 +40,7 @@
     width: 100%;
     border: 1px solid #d0d7de;
     border-radius: 25px;
-    background-color: #eb9d2a;
+  
     border-collapse: collapse;
     overflow: hidden;
     cursor: pointer;
@@ -46,6 +52,7 @@
     font-size: large;
     text-align: center;
     border: 1px solid #2f2f30;
+    background-color: #f46105;
 }
 
 #approve {
@@ -79,7 +86,7 @@ border: none;
     border: 1px solid #d0d7de;
     border-radius: 25px;
      overflow: hidden;
-    background-color: #eb9d2a;
+    background-color: #f46105;
      border-collapse: collapse; 
     cursor: pointer;
 }
@@ -90,7 +97,15 @@ border: none;
     font-size: large;
     text-align: center;
     border: 1px solid #2f2f30;
+   
+   
 }
+.sent-request td:nth-child(3) {
+    border-left: 1px solid #2f2f30;
+    border-right: 1px solid #2f2f30;
+    text-align: center;
+}
+
 .sent-request tbody{
     background-color: antiquewhite;
 }
@@ -98,6 +113,16 @@ border: none;
      background-color: #fbc383;
 }
 
+.badge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;           /* Space between icon & text */
+    width: 100%;        /* Make it fill the cell */
+    height: 100%;
+    border: none !important;
+    font-weight: bold;
+}
 
 .badge-green {
   color: #2ecc71; /* green */
@@ -110,6 +135,7 @@ border: none;
 .badge-orange {
   color: #f39c12; /* orange */
 }
+
 
 
 

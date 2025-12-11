@@ -88,5 +88,28 @@ router.patch("/block",adminVerify,async(req,res)=>{
     res.send({message:"Library rejected",library})
 
 })
-
+router.get("/countapproveduser",adminVerify,async(req,res)=>{
+    const count_users=await User.countDocuments({Approved:"true"})
+    res.send({message:"Approved users",count_users})
+})
+router.get("/countapproveduser",adminVerify,async(req,res)=>{
+    const count_users=await User.countDocuments({Approved:"true"})
+    res.send({message:"Approved users",count_users})
+})
+router.get("/countpendinguser",adminVerify,async(req,res)=>{
+    const count_users=await User.countDocuments({Approved:"false"})
+    res.send({message:"Approved users",count_users})
+})
+router.get("/countapprovedlibraries",adminVerify,async(req,res)=>{
+    const count_lib=await Library.countDocuments({Approved:"true"})
+    res.send({message:"Approved users",count_lib})
+})
+router.get("/countpendinglibraries",adminVerify,async(req,res)=>{
+    const count_lib=await Library.countDocuments({Approved:"false"})
+    res.send({message:"Approved users",count_lib})
+})
+router.get("/bookscount",adminVerify,async(req,res)=>{
+    const bookcount=await Book.countDocuments()
+    res.send({message:"Total books donated",bookcount})
+})
 module.exports=router

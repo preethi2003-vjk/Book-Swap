@@ -100,6 +100,7 @@ function Userregister(){
                 <label htmlFor="profilePicture">Profile Image</label>
                 <input type="file"  onChange={uploadimage}/>
                 <button type="submit" onClick={register}>Register</button>
+                <p>Have already an Account? <Link to="/userlogin">Login here</Link></p>
             </form>
           
         </div>

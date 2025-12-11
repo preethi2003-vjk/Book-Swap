@@ -5,6 +5,7 @@ const jwt=require("jsonwebtoken")
 const Book=require("../Models/book.js")
 const Request=require("../Models/request.js")
 const upload=require("../services/imageservices.js")
+const UserVerify = require("../Middlewares/usermidlleware.js")
 router.post("/add",upload.single("cover_Image"),async(req,res)=>{
     try{
         const{title,author,genere,publishedYear,ISBN,language,description}=req.body
@@ -54,10 +55,10 @@ router.get("/viewall",async(req,res)=>{
     const token=req.headers.authorization.slice(7)
     const decoded=jwt.verify(token,process.env.JWT_TOKEN)
     
-    const books=await Book.find({UserID:{$ne:decoded.id}})
-    console.log(books)
+    const books=await Book.find({UserID:{$ne:decoded.id},donationStatus:false})
+   
     const request=await Request.find({requesterID:decoded.id}).select("bookId")
-    console.log(request)
+    
     const idArray=request.map((item)=>{
             return item.bookId.toString()
     })
@@ -84,5 +85,11 @@ router.get("/viewall",async(req,res)=>{
         
         res.send(newBooks)
     }
+})
+router.patch("/updatedonationstatus",UserVerify,async(req,res)=>{
+    const {bookId}=req.body
+    await Book.findByIdAndUpdate(bookId,{donationStatus:"true"})
+    res.send({message:"Donation status updated"})
+
 })
 module.exports=router

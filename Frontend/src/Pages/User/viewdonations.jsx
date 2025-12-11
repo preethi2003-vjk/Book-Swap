@@ -6,6 +6,7 @@ import { Link } from "react-router"
 function ViewDonation() {
     const[mydonations,setmydonations]=useState([])
     const[otherdonations,setotherDonations]=useState([])
+        const [selectedBook, setSelectedBook] = useState(null)
     async function fetchDonations(){
         
         const response=await instance.get("/book/view")
@@ -39,9 +40,10 @@ function ViewDonation() {
     return (
         <>
             <div className="view-donation-books">
-                <h1>VIEW DONATIONS</h1>
+                
                    <div className="user-link-dash">
-                <Link to="/user-dash"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" stroke="black" fill="none" ><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></Link>
+                <Link to="/user-dash"><button>Back</button></Link>
+                <h1>VIEW DONATIONS</h1>
             </div>
             
                 <h2>📚My Donations</h2>
@@ -58,7 +60,7 @@ function ViewDonation() {
                         />
                         <h3>{item.title}</h3>
                         <p>{item.author}</p>
-                        <p>{new Date(item.Date).toLocaleDateString()}</p>
+                        <p>{new Date(item.createdAt).toLocaleDateString()}</p>
                     </div>
                     )
                    )} 
@@ -77,7 +79,9 @@ function ViewDonation() {
                         <img src={"http://localhost:8080/uploads/"+item.coverImage}/>
                         <h3>{item.title}</h3>
                         <p>{item.author}</p>
+                        
                         <p>date of donation</p>
+                        <button className="description" onClick={()=>setSelectedBook(item)}>Description</button>
                         <button onClick={()=>{
                             sendRequest(item._id)
                         }} disabled={item.disabled}
@@ -91,6 +95,19 @@ function ViewDonation() {
                 </div>
                 </div>
             </div>
+            {/* ⭐ MODAL */}
+            {selectedBook && (
+                <div className="modal-overlay">
+                    <div className="modal-content">
+                        <h2>{selectedBook.title}</h2>
+                        <p>{selectedBook.description}</p>
+
+                        <button className="close-btn" onClick={() => setSelectedBook(null)}>
+                            Close
+                        </button>
+                    </div>
+                </div>
+            )}
             </>
             )
 }

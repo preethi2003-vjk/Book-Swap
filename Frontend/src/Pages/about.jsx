@@ -7,7 +7,7 @@ function About() {
             <div className="about-page">
 
                 {/* Back Button */}
-                <div className="backs-btn">
+                <div className="about-btn">
                     <Link to="/">
                         <button>⟵ Back</button>
                     </Link>

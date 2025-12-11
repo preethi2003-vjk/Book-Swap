@@ -43,6 +43,7 @@ function Libraryviewbooks() {
                                 >
                                     View Pdf
                                 </button>
+        
                                 {showModal && (
                                     <div className="pdf-modal-overlay">
                                         <div className="pdf-modal-box">

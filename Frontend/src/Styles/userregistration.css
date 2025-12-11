@@ -3,8 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url(https://png.pngtree.com/background/20210709/original/pngtree-blue-postgraduate-theme-background-picture-image_958535.jpg);
-    background-repeat: no-repeat;
+    background-image:url(https://img.freepik.com/free-photo/clipboard-with-ribbons-candles_23-2147628613.jpg);
     background-size:cover
    
    
@@ -13,7 +12,7 @@
     display: flex;
     gap: 20px;
     margin: 5px 0 15px 0;
-    font-size: large;
+    font-size: x-large;
 }
 
 
@@ -34,11 +33,11 @@
 .user-reg-form{
     display: flex;
     flex-direction: column;
-    width: 400px;
+    width: 500px;
      padding: 30px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
      border-radius: 8px;
-     border: 2px solid #656464;
+     border: 2px solid #191818;
      background-color: transparent;
     
 
@@ -58,13 +57,13 @@
      margin-bottom: 5px;
     padding: 10px;
     border-radius: 2px;
-     border: 2px solid #aaa;
+     border: 2px solid #353535;
      border-radius: 4px;
      font-size: larger;
      background-color: transparent;
 }
 .user-reg-form input::placeholder{
-    color:rgb(86, 88, 88);
+    color:rgb(39, 40, 40);
 }
 .user-reg-form button{
      padding: 10px 20px;
@@ -89,4 +88,8 @@
     padding: 5px;
     
     background-color: transparent;
+}
+.user-reg-form p{
+    font-size: x-large;
+
 }

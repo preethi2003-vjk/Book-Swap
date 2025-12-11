@@ -29,7 +29,8 @@ function Librarylogin(){
             const token=response.data.token
             localStorage.setItem("Token",token)
             alert("Login Successfully")
-            navigate("/libdash")
+            window.location.href="/libdash"    //page reload cheyum
+            // navigate("/libdash")        //page reload cheyathilla dom vechu update cheyumm paskhe speed performance loading
         }
     }
         catch(err){
